@@ -1,0 +1,11 @@
+POST http://localhost:8080/api/recommendations
+Content-Type: application/json
+
+{
+  "level": "CK",
+  "goal": "vocab",
+  "energy": "high",
+  "timeMinutes": 10,
+  "materials": ["flashcards"],
+  "constraints": ["no-running"]
+}

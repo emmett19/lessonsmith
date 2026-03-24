@@ -1,0 +1,341 @@
+[
+{
+  "pattern": "^Can (he|she|it|you) .+\\?$",
+  "candidateGames": [
+    {"gameId": "binary-cue-response", "weight": 0.8},
+    {"gameId": "line-question-game-faceoff", "weight": 0.6},
+    {"gameId": "number-call-clap-race", "weight": 0.5},
+    {"gameId": "hoop-race", "weight": 0.5},
+    {"gameId": "hoop-race-2", "weight": 0.5},
+    {"gameId": "quick-switch", "weight": 0.6},
+    {"gameId": "flashcard-cup-grab", "weight": 0.5},
+    {"gameId": "blindfold-bonk", "weight": 0.5}
+  ],
+  "outputType": "Q+A",
+  "energy": "high"
+},
+{
+"pattern": "^Could (he|she|it|you) .+\\?$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.7},
+{"gameId": "line-question-game-faceoff", "weight": 0.6},
+{"gameId": "number-call-clap-race", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5},
+{"gameId": "flashcard-cup-grab", "weight": 0.5},
+{"gameId": "blindfold-bonk", "weight": 0.5}
+],
+"outputType": "Q+A",
+"energy": "high"
+},
+{
+"pattern": "^Will (he|she|it|you) be able to .+\\?$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "number-call-clap-race", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5}
+],
+"outputType": "Q+A",
+"energy": "high"
+},
+{
+"pattern": "^What can (he|she|it|you) do\\?$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.7},
+{"gameId": "line-question-game-faceoff", "weight": 0.6},
+{"gameId": "number-call-clap-race", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5}
+],
+"outputType": "Q+A",
+"energy": "high"
+},
+{
+"pattern": "^I can .+\\.$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.7},
+{"gameId": "number-call-clap-race", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5}
+],
+"outputType": "A",
+"energy": "high"
+},
+{
+"pattern": "^I cannot .+\\.$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.7},
+{"gameId": "number-call-clap-race", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5}
+],
+"outputType": "A",
+"energy": "high"
+},
+{
+"pattern": "^Does (he|she|it|you) like .+\\?$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "restaurant-role-play", "weight": 0.8, "domain": "FOOD"},
+{"gameId": "counselor-schedule-roleplay", "weight": 0.8, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "number-call-clap-race", "weight": 0.4},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^Do (they|we|you) like .+\\?$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "restaurant-role-play", "weight": 0.8, "domain": "FOOD"},
+{"gameId": "counselor-schedule-roleplay", "weight": 0.8, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "number-call-clap-race", "weight": 0.4},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^Do you like .+ or .+\\?$",
+"candidateGames": [
+{"gameId": "restaurant-role-play", "weight": 1.0, "domain": "FOOD"},
+{"gameId": "hidden-word-or-choice", "weight": 0.6},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^(Yes|No), (he|she|it|I) (do|does|don't|doesn't)\\.$",
+"candidateGames": [
+{"gameId": "binary-cue-response", "weight": 0.9},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^I like .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.8, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.8, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "hoop-race-2", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^I love .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.8, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.8, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "hoop-race-2", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^I enjoy .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.6, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.6, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "hoop-race-2", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^I prefer .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.6, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.6, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "hoop-race-2", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^I don't like .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.8, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.8, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "hoop-race-2", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^Is it a .+ or a .+\\?$",
+"candidateGames": [
+{"gameId": "hidden-word-or-choice", "weight": 1.0},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^It's a .+\\.$",
+"candidateGames": [
+{"gameId": "hidden-word-or-choice", "weight": 1.0},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^Is (he|she|it) wearing a .+\\?$",
+"candidateGames": [
+{"gameId": "guess-who-descriptive-deduction", "weight": 1.0},
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "line-question-game-faceoff", "weight": 0.5},
+{"gameId": "hoop-race", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^Are they wearing a .+\\?$",
+"candidateGames": [
+{"gameId": "guess-who-descriptive-deduction", "weight": 1.0},
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "hoop-race", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^Does (he|she) have a .+\\?$",
+"candidateGames": [
+{"gameId": "guess-who-descriptive-deduction", "weight": 1.0},
+{"gameId": "hoop-race", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^Are (they|we) carrying a .+\\?$",
+"candidateGames": [
+{"gameId": "guess-who-descriptive-deduction", "weight": 1.0},
+{"gameId": "hoop-race", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^(I|They|We) .+\\.$",
+"candidateGames": [
+{"gameId": "counselor-schedule-roleplay", "weight": 0.4, "domain": "SCHOOL_SUBJECTS"},
+{"gameId": "restaurant-role-play", "weight": 0.4, "domain": "FOOD"},
+{"gameId": "hoop-race", "weight": 0.3},
+{"gameId": "hoop-race-2", "weight": 0.3},
+{"gameId": "quick-switch", "weight": 0.3}
+],
+"outputType": "A",
+"energy": "medium"
+},
+{
+"pattern": "^[A-Za-z]+$",
+"candidateGames": [
+{"gameId": "hoop-race", "weight": 0.6},
+{"gameId": "hoop-race-2", "weight": 0.6},
+{"gameId": "quick-switch", "weight": 0.7},
+{"gameId": "flashcard-cup-grab", "weight": 0.8},
+{"gameId": "blindfold-bonk", "weight": 0.8}
+],
+"outputType": "A",
+"energy": "high"
+},
+{
+"pattern": "^([A-Za-z]+\\s?){1,3}$",
+"candidateGames": [
+{"gameId": "hoop-race", "weight": 0.6},
+{"gameId": "hoop-race-2", "weight": 0.6},
+{"gameId": "quick-switch", "weight": 0.7},
+{"gameId": "flashcard-cup-grab", "weight": 0.7},
+{"gameId": "blindfold-bonk", "weight": 0.7}
+],
+"outputType": "A",
+"energy": "high"
+},
+{
+"pattern": "^(What|Who|Where|When|Why|How) .+\\?$",
+"candidateGames": [
+{"gameId": "dialogue-duel", "weight": 0.8},
+{"gameId": "line-question-game-faceoff", "weight": 0.6},
+{"gameId": "hoop-race", "weight": 0.4},
+{"gameId": "quick-switch", "weight": 0.4}
+],
+"outputType": "Q+A",
+"energy": "high"
+},
+
+{
+"pattern": "^Where is the .+\\?$",
+"candidateGames": [
+{"gameId": "number-call-clap-race", "weight": 0.7},
+{"gameId": "line-question-game-faceoff", "weight": 0.6},
+{"gameId": "binary-cue-response", "weight": 0.6},
+{"gameId": "hoop-race", "weight": 0.5},
+{"gameId": "hoop-race-2", "weight": 0.5},
+{"gameId": "quick-switch", "weight": 0.5}
+],
+"outputType": "Q+A",
+"energy": "medium"
+},
+{
+"pattern": "^.+$",
+"candidateGames": [
+{"gameId": "correct-the-teacher", "weight": 0.2},
+{"gameId": "hoop-race", "weight": 0.2},
+{"gameId": "quick-switch", "weight": 0.2},
+{"gameId": "blindfold-bonk", "weight": 0.2}
+],
+"outputType": "short correction",
+"energy": "medium"
+},
+
+{
+"pattern": "^What is it\\?$",
+"candidateGames": [
+{"gameId": "dialogue-duel", "weight": 0.8},
+{"gameId": "line-question-game-faceoff", "weight": 0.7},
+{"gameId": "number-call-clap-race", "weight": 0.6}
+],
+"outputType": "Q+A",
+"energy": "high"
+},
+
+{
+"pattern": "^Where is it\\?$",
+"candidateGames": [
+{"gameId": "dialogue-duel", "weight": 0.8},
+{"gameId": "line-question-game-faceoff", "weight": 0.7},
+{"gameId": "number-call-clap-race", "weight": 0.6}
+],
+"outputType": "Q+A",
+"energy": "high"
+}
+]

@@ -1,0 +1,189 @@
+Interview Prep – Recommendation System Architecture
+Question 1
+
+Walk me through the architecture of your recommendation system. How does user input get transformed into a ranked list of games?
+
+Answer
+
+The system follows a thin-controller, service-oriented architecture.
+
+The frontend collects four inputs:
+
+Level (dropdown)
+Energy (dropdown)
+Domain (dropdown)
+Target language (unstructured teacher input)
+
+These are packaged into a RecommendationRequest object and passed to the RecommendationService.
+
+The controller contains no business logic and simply delegates to the service layer.
+
+Inside the service, the request flows through three stages:
+
+1. Normalization & Mapping
+Level and energy are mapped to ordinal values.
+Target language is matched against regex patterns stored in a JSON configuration file.
+Domain is used as a categorical filter.
+
+2. Candidate Filtering
+
+Games whose stored patterns match the input are selected as candidates.
+Pattern storage is JSON-driven to decouple language logic from Java code, allowing easy expansion without modifying business logic.
+
+3. Scoring & Ranking
+
+Each candidate game receives independent sub-scores:
+Target language match score (heaviest weight)
+Level proximity score
+Energy proximity score
+Domain match score
+
+These are combined using a weighted sum formula to produce a final numeric score.
+The top-ranked games are returned in a RecommendationResponse.
+
+Target language is prioritized because pedagogical alignment is the primary instructional constraint.
+
+Question 2
+
+If your dataset grows to 500+ games and patterns, what architectural or performance issues might emerge, and how would you redesign it?
+
+Potential Issues
+
+Linear regex evaluation (O(n))
+Every request currently evaluates patterns across all games.
+Acceptable at small scale but inefficient at larger scale.
+
+Scoring saturation
+Limited scoring dimensions may lead to many tied or near-equal results.
+Reduced differentiation decreases recommendation quality.
+
+Maintainability
+
+Large JSON files become harder to manage.
+
+Pattern conflicts and debugging become more complex.
+
+Proposed Improvements
+Pre-filtering Before Regex Matching
+
+Instead of evaluating regex across all games:
+
+First filter by level band.
+
+Then filter by energy band.
+
+Then apply regex matching only to that reduced subset.
+
+This reduces evaluation from O(n) to O(k), where k is a smaller candidate set.
+
+Move Toward Modular Scoring Pipeline
+
+Instead of one monolithic scoring function, scoring would be refactored into independent rule components:
+
+LevelScoringRule
+
+EnergyScoringRule
+
+DomainScoringRule
+
+MaterialsScoringRule
+
+TimeScoringRule
+
+Each rule implements a common interface and contributes to the final score.
+
+Benefits:
+
+Open for extension, closed for modification
+
+Easier testing
+
+Easier weight adjustment
+
+Clearer debugging
+
+Better explainability
+
+Increased Scoring Granularity
+
+Introduce additional weighted dimensions such as:
+
+Materials availability
+
+Time constraints
+
+Classroom format compatibility
+
+This reduces ties and increases ranking precision.
+
+Future Migration Path
+
+If scale continues increasing:
+
+Move from JSON to database-backed pattern storage
+
+Add metadata indexing
+
+Introduce dynamic querying
+
+Tradeoff Control in Scoring
+
+The system currently uses a weighted sum model.
+
+Target language receives the highest weight because:
+
+A mismatch makes the recommendation pedagogically invalid.
+
+However, secondary dimensions like energy and level represent feasibility constraints.
+
+Future refinement could include:
+
+Minimum threshold constraints (e.g., reject games more than 1 level away)
+
+Hard filtering before scoring
+
+Hierarchical scoring tiers
+
+This separates:
+
+Relevance (does it teach the target structure?)
+
+Feasibility (can it realistically run in this classroom?)
+
+Explainability Strategy
+
+Raw scores are not exposed to the teacher.
+
+Instead, trust is built through:
+
+Detailed gameplay description
+
+A concise “Why this fits” explanation
+
+For architectural consistency, explanations should reflect scoring breakdowns.
+
+Because scoring is modular, the system can log which dimensions contributed most strongly and generate explanations such as:
+
+“Strong match for target sentence pattern.”
+
+“Appropriate for CP level.”
+
+“Fits low-energy classroom setting.”
+
+This ensures consistency between algorithmic reasoning and UI messaging.
+
+Architectural Principles Demonstrated
+
+Thin controller, service-layer business logic
+
+JSON-driven configuration for flexibility
+
+Weighted algorithmic scoring
+
+Design for extensibility
+
+Forward-thinking scalability planning
+
+Separation of relevance vs feasibility
+
+Explainability-aware architecture

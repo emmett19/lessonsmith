@@ -1,0 +1,1400 @@
+[
+  {
+    "id": "binary-cue-response",
+    "name": "Binary Cue Response Game",
+    "levels": ["CK", "ET1", "ET2", "PowerUp"],
+    "classSize": "6-16",
+    "classSizeMin": 6,
+    "classSizeMax": 16,
+    "format": "Whole class, individual response",
+    "category": "Q&A/Dialogue",
+    "energy": "high",
+    "productionDepth": "fixed short answer",
+    "languageReason": "Good for practicing fast, confident yes/no answers using clear question cues.",
+    "energyReason": "High-energy game that keeps the whole class alert and responding quickly.",
+    "repDensity": "high",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-only",
+    "movement": "medium",
+    "competition": "light (optional)",
+    "materials": ["flashcards"],
+    "bestFor": "Practicing fast, confident short answers to a yes/no question using clear external cues.",
+    "tags": {
+      "patterns": ["binary_question", "fixed_response"],
+      "outputTypes": ["A", "single_word", "Q+A"],
+      "cognitiveModes": ["listening_discrimination", "rapid_decision", "fluency"]
+    },
+    "description": "Binary Cue Response is a listening and speaking game where students answer yes/no questions. Two characters indicate the correct response: the Panda always answers 'yes' and the Donkey always answers 'no'.",
+    "howToRun": [
+      "Ask the target language question aloud, e.g., 'Can it swim?' or 'Does he like apples?'.",
+      "Students respond 'Yes it can' / 'No it can't' or 'Yes he/she does' / 'No he/she doesn't' based on which character the question applies to.",
+      "Optionally, students can take turns asking each other questions using the same binary rules."
+    ],
+    "coreMechanic": [
+      "Teacher introduces and models the visual cues and responses",
+      "Teacher presents a visual cue that determines the correct answer",
+      "Teacher calls or shows a prompt (word, action, or image)",
+      "Students wait, then respond physically and verbally with the correct short answer",
+      "Teacher confirms accuracy before continuing"
+    ],
+    "notes": [
+      "Visual cues must be consistent and introduced explicitly",
+      "Accuracy should be prioritized over speed at first",
+      "Works best as a short, intense practice block (5–10 minutes)"
+    ],
+    "outputProfile": {
+      "requiredOutput": "fixed short answers (yes/no sentence)",
+      "cognitiveMode": "listening discrimination + rapid decision",
+      "speedVsAccuracy": "balanced (accuracy must be stable before speed)"
+    }
+  }
+,
+  {
+    "id": "volcano-eruption",
+    "name": "Volcano Eruption",
+    "levels": ["CP", "CK", "ET1"],
+    "classSize": "6-20",
+    "classSizeMin": 6,
+    "classSizeMax": 20,
+    "format": "Pairs (reactive stations), whole-class control",
+    "category": "Vocab",
+    "energy": "high",
+    "productionDepth": "single-word recognition",
+    "languageReason": "Great for building fast listening recognition and single-word recall.",
+    "energyReason": "High-energy reaction game that keeps students focused and ready to respond.",
+    "repDensity": "high",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "medium",
+    "competition": "light (optional)",
+    "materials": ["flashcards"],
+    "bestFor": "Building fast listening recognition and reaction control with high engagement.",
+    "tags": {
+      "patterns": ["binary_question", "target_phrase"],
+      "outputTypes": ["Q+A", "A", "single_word"],
+      "cognitiveModes": ["listening_reaction", "retrieval", "fluency"]
+    },
+    "description": "Volcano Eruption is a high-energy TPR listening game designed to practice vocabulary and rapid comprehension. Students work in pairs, each guarding a flashcard. When the teacher calls out a word, only the student with that word reacts by performing the “eruption” action (squatting + shouting the word). On the rotation cue “Volcano Eruption / All Change,” students switch flashcards with their partners. The game emphasizes fast listening, accurate word recognition, and clear pronunciation. Pace can be adjusted by the teacher to match class energy, and safety cues should be maintained to prevent collisions.",
+    "howToRun": [
+      "Assign one flashcard per student.",
+      "Explain the eruption action: squat + shout when your word is called.",
+      "Call out target words randomly; only the student with the matching word responds.",
+      "After several rounds, give the rotation cue and have students swap cards with a partner.",
+      "Continue until all students have had multiple turns, monitoring pace and engagement."
+    ],
+    "coreMechanic": [
+      "Pairs are assigned to guard one target word or card",
+      "Teacher reviews reaction rules and models one round",
+      "Teacher calls target words in random order",
+      "Only the correct pair may react and say the word",
+      "Incorrect reactions trigger a brief reset",
+      "Pairs rotate or receive new words at a cue"
+    ],
+    "notes": [
+      "Listening accuracy matters more than speed",
+      "Run in short bursts to maintain quality",
+      "Scoring can be removed if accuracy drops"
+    ],
+    "outputProfile": {
+      "requiredOutput": "single-word recognition (optional choral repetition)",
+      "cognitiveMode": "listening recognition + reaction control",
+      "speedVsAccuracy": "accuracy first, then speed"
+    }
+  }
+,
+  {
+    "id": "restaurant-role-play",
+    "name": "Restaurant Role Play",
+    "levels": ["CK", "ET1", "ET2", "PowerUp", "CL"],
+    "classSize": "3-12",
+    "classSizeMin": 3,
+    "classSizeMax": 12,
+    "format": "Role-based (3–4 students active at a time)",
+    "category": "Roleplay",
+    "domain": "food",
+    "domainSpecific": true,
+    "energy": "medium",
+    "productionDepth": "dialogue",
+    "languageReason": "Excellent for practicing structured question-and-answer exchanges in a real-life context.",
+    "energyReason": "Medium energy roleplay that encourages engagement without losing control.",
+    "repDensity": "medium",
+    "controlRisk": "medium",
+    "monitoringModel": "TA-helpful",
+    "movement": "medium",
+    "competition": "None",
+    "materials": ["flashcards"],
+    "bestFor": "Practicing contextual sentence production through a predictable service interaction.",
+    "tags": {
+      "patterns": ["roleplay", "contextual_dialogue", "question_answer_pair"],
+      "outputTypes": ["Q+A", "sentence", "dialogue"],
+      "cognitiveModes": ["fluency", "pragmatic_production", "turn_taking"]
+    },
+    "description": "Restaurant Role Play is a medium-energy roleplay for practicing question-and-answer pairs in a restaurant context. Students use target language like 'What do you like?' / 'I like apples' or 'Do you like burgers?' / 'Yes, I do' / 'No, I don't.' Roles include customer, waiter, and cook, and the cook can respond with controlled refusals (e.g., 'No apples', 'No chicken') to encourage repeated practice.",
+    "howToRun": [
+      "Assign roles: customer, waiter, cook (3–4 students active at a time).",
+      "Waiter asks the target language question from the lesson.",
+      "Customer responds in full sentences using the target language.",
+      "Cook responds as appropriate (teacher can control 'No' responses to increase repetitions).",
+      "Rotate roles as needed so all students practice speaking and listening.",
+      "Teacher monitors pacing, controls complexity, and ensures correct use of target language."
+    ],
+    "coreMechanic": [
+      "Assign roles: customer, waiter, cook",
+      "Waiter asks the target question",
+      "Customer answers with preferences",
+      "Waiter relays the request to the cook",
+      "Cook hands over the item",
+      "Roles rotate"
+    ],
+    "notes": [
+      "Introduce the cook role for dramatic effect",
+      "Teacher controls pacing and complexity",
+      "Optional refusal adds humor and realism"
+    ],
+    "outputProfile": {
+      "requiredOutput": "contextual full sentences (preferences + requests)",
+      "cognitiveMode": "fluency + pragmatic role-based production",
+      "speedVsAccuracy": "accuracy → fluency"
+    }
+  }
+,
+  {
+    "id": "guess-who-descriptive-deduction",
+    "name": "Guess Who? (Descriptive Deduction)",
+    "levels": ["ET1", "ET2", "PowerUp", "CL"],
+    "classSize": "6-16",
+    "classSizeMin": 6,
+    "classSizeMax": 16,
+    "format": "Whole class, turn-based questioning",
+    "category": "Q&A/Dialogue",
+    "energy": "medium",
+    "productionDepth": "Q+A",
+    "languageReason": "Strong for practicing descriptive yes/no questions and logical thinking in English.",
+    "energyReason": "Medium energy game that promotes focused discussion and careful listening.",
+    "repDensity": "low",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-only",
+    "movement": "low",
+    "competition": "light (optional)",
+    "materials": ["paper slips", "bag", "whiteboard"],
+    "bestFor": "Practicing descriptive yes/no questions with logical deduction.",
+    "tags": {
+      "patterns": ["descriptive_questioning", "deduction", "yes_no_questions"],
+      "outputTypes": ["Q+A", "sentence", "short_phrase"],
+      "cognitiveModes": ["inference", "listening", "hypothesis_testing"]
+    },
+    "description": "Guess Who? (Descriptive Deduction) is a medium-energy, turn-based class game where students practice descriptive yes/no questions and logical deduction. It is best suited for the Q+A pair 'Is she wearing a...' / 'Yes she is' / 'No she isn't', but can also be adapted to 'Are they wearing a...' to allow for a mystery person who may be a boy or a girl.",
+    "howToRun": [
+      "Students write their names on slips of paper and place them in a bag.",
+      "One student secretly draws a name without revealing it.",
+      "Other students take turns asking descriptive yes/no questions using the target language (e.g., 'Is she wearing a...' or 'Are they wearing a...').",
+      "The student who drew the name answers truthfully ('Yes she is' / 'No she isn't').",
+      "Students use the answers to eliminate possibilities from their mental or written list.",
+      "The game ends when the hidden person is correctly identified.",
+      "Teacher models strong questions early and ensures repeated questions are avoided."
+    ],
+    "coreMechanic": [
+      "Students write their names and place them in a bag",
+      "One student secretly draws a name",
+      "Other students ask descriptive questions",
+      "Selector answers truthfully",
+      "Students eliminate possibilities",
+      "Game ends when the person is identified"
+    ],
+    "notes": [
+      "Student-written names increase engagement",
+      "Model strong questions early",
+      "Prevent repeated questions",
+      "Scoring is optional"
+    ],
+    "outputProfile": {
+      "requiredOutput": "descriptive yes/no questions and answers",
+      "cognitiveMode": "inference + listening + hypothesis testing",
+      "speedVsAccuracy": "accuracy strongly prioritized"
+    }
+  }
+,
+  {
+    "id": "counselor-schedule-roleplay",
+    "name": "Counselor Schedule Roleplay",
+    "levels": ["CL", "ET2"],
+    "classSize": "6-12",
+    "classSizeMin": 6,
+    "classSizeMax": 12,
+    "format": "Roleplay, small-group demo (3 roles) with whole-class rotation",
+    "category": "Roleplay",
+    "domain": "school_subjects",
+    "domainSpecific": true,
+    "energy": "medium",
+    "languageReason": "Ideal for practicing full contrast sentences using 'but' and he/she reporting.",
+    "energyReason": "Medium energy structured roleplay that balances speaking practice with clear control.",
+    "movement": "medium",
+    "competition": "none (optional light team points)",
+    "materials": ["whiteboard", "markers", "blank cards"],
+    "bestFor": "Practicing contrast sentences with 'but' (like/love vs dont like/hate) and he/she reporting, using a fun authority-role twist and a visible schedule board",
+    "tags": {
+      "patterns": ["contrast_but", "he_she_reporting", "roleplay", "preference_selection"],
+      "outputTypes": ["full_sentence"],
+      "cognitiveModes": ["role_based_speaking", "preference_selection", "listening_comprehension"]
+    },
+    "description": "Counselor Schedule Roleplay (Likes/Dislikes + But + Constraint Twist) is a medium-energy small-group roleplay where students practice full contrast sentences using 'but' and he/she reporting. Students respond to counselor questions about likes and dislikes and optionally report on peers using target language frames. A visible schedule grid and constraint twists are used to maintain engagement and increase repetition of the target sentences.",
+    "howToRun": [
+      "Teacher prepares a small list of school subjects and draws a schedule grid on the board (subjects across the top, times down the side).",
+      "Three roles are assigned: counselor asks questions, student answers preferences, parent answers about student using he/she frames.",
+      "Counselor asks 'What subjects do you like?' and records responses on the grid using cards.",
+      "Students respond using contrast sentences: 'I like ___, but I don't like ___' or 'He/She likes ___, but he/she doesn't like ___'.",
+      "Counselor introduces a constraint twist such as 'Sorry, you have to take ___', requiring students to adapt responses while staying in the target frame.",
+      "Roles rotate so multiple students experience each role.",
+      "Teacher monitors language accuracy, ensures pacing, and encourages full sentence production."
+    ],
+    "inputsNeeded": [
+      "Short list of school subjects (teacher inputs subject list)",
+      "Target sentence frames: 'I like ___, but I dont like ___' (love/hate optional)",
+      "He/She reporting frame: 'He/She likes ___, but he/she doesnt like ___'",
+      "Counselor question frames: 'What subjects do you like?' / 'What subjects does he/she like?'",
+      "Constraint twist lines: 'Sorry, you have to take ___'"
+    ],
+    "coreMechanic": [
+      "Teacher draws schedule grid on board (subjects across top, times down side)",
+      "Three roles: counselor asks questions, student answers preferences, parent answers about student using he/she",
+      "Counselor places subject cards into schedule grid based on answers",
+      "Counselor introduces a constraint twist forcing a change while staying in the same language frame",
+      "Roles rotate so multiple students get turns"
+    ],
+    "notes": [
+      "Keep subject set small to maintain pace",
+      "Board + cards drives engagement; without it the roleplay can feel dry",
+      "Constraint twist mirrors restaurant roleplay 'Sorry, no ___' moment",
+      "If he/she reporting is too difficult, run student-only version first"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Full sentences using contrast with 'but' (I like ___, but I dont like ___) and optional he/she reporting",
+      "cognitiveMode": "role-based speaking + preference selection + listening comprehension",
+      "speedVsAccuracy": "accuracy-first (speed increases naturally with repetition)"
+    }
+  }
+,
+
+  {
+    "id": "line-question-game-faceoff",
+    "name": "Line Question Game – Face-Off Variant",
+    "levels": ["CL", "ET2", "PowerUp"],
+    "classSize": "6-14",
+    "classSizeMin": 6,
+    "classSizeMax": 14,
+    "format": "Team vs Team, line formation, paired face-off",
+    "category": "Q&A/Dialogue",
+    "energy": "medium",
+    "productionDepth": "Q+A",
+    "languageReason": "Ideal for practicing full contrast sentences using 'but' and he/she reporting.",
+    "energyReason": "Medium energy structured roleplay that balances speaking practice with clear control.",
+    "repDensity": "medium",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "low",
+    "competition": "Team-based (non-language-decided)",
+    "materials": ["none"],
+    "bestFor": "Practicing question–answer exchanges when students need more thinking time, clearer monitoring, or reduced rep pressure",
+    "tags": {
+      "patterns": ["Q+A", "structured_exchange", "target_sentence_frame"],
+      "outputTypes": ["Q+A", "sentence"],
+      "cognitiveModes": ["question_formation", "listening_comprehension"]
+    },
+    "description": "Line Question Game – Face-Off Variant is a medium-energy team-based activity where students practice full question-and-answer exchanges in a controlled paired format. Students stand in two lines facing each other and take turns asking and answering using the target sentence frames. A separate non-language competitive mechanic is included to maintain engagement without affecting language accuracy.",
+    "howToRun": [
+      "Students form two lines facing each other.",
+      "The student at the front of one line asks a question directly to the student facing them.",
+      "The opposing student answers using the target sentence frame (full sentence).",
+      "After the exchange, a non-language competitive mechanic is used, such as rock-paper-scissors or a dice roll, to determine which team rotates forward.",
+      "Teams rotate so new pairs face off, maintaining controlled monitoring of language.",
+      "Teacher listens to ensure correct sentence formation and clear pronunciation, while keeping the game pace steady."
+    ],
+    "coreMechanic": [
+      "Students stand in two lines facing each other",
+      "One student asks a question to the opposing student directly in front of them",
+      "The opposing student answers using the target structure",
+      "After the exchange, a non-language competitive mechanic is used (e.g. rock-paper-scissors or dice roll)",
+      "Teams rotate forward so new pairs face off"
+    ],
+    "notes": [
+      "Lower rep volume than standard Line Question Game",
+      "Teacher can clearly hear both sides of the exchange",
+      "Competition outcome is intentionally separated from language accuracy",
+      "Useful as a bridge between controlled practice and faster team formats"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Full question and full answer using the target sentence frame",
+      "cognitiveMode": "question formation + listening comprehension",
+      "speedVsAccuracy": "accuracy-first"
+    }
+  }
+,
+  {
+    "id": "number-call-clap-race",
+    "name": "1v1 Number Call Clap Response Race",
+    "levels": ["ET1", "ET2", "CL", "PowerUp"],
+    "classSize": "6-16",
+    "classSizeMin": 6,
+    "classSizeMax": 16,
+    "format": "Team vs Team, whole-class listening with paired responders",
+    "category": "Q&A/Dialogue",
+    "energy": "medium",
+    "productionDepth": "fixed response",
+    "description": "1v1 Number Call Clap Response Race is a medium-energy, team-based listening game where students practice giving short, accurate answers to teacher-controlled questions. Students are assigned numbers, and the teacher calls a number to determine which pair races to respond. The focus is on careful listening, rapid recall, and quick physical response in a controlled competitive format.",
+    "howToRun": [
+      "Teacher assigns numbers so each number appears on two students in the class.",
+      "Teacher asks a target language question and then calls a specific number.",
+      "The two students with that number race to clap first.",
+      "The first student to clap gives the full answer to the question for full points.",
+      "The second student to clap answers for partial points.",
+      "Points are tallied toward a team score, encouraging listening and engagement.",
+      "Teacher monitors responses for accuracy and ensures fair play; optional movement or secondary tasks can be added to increase engagement."
+    ],
+    "languageReason": "Effective for reinforcing short, accurate answers to teacher-controlled questions.",
+    "energyReason": "Medium energy competitive format that keeps all students listening carefully.",
+    "repDensity": "medium",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "low (optional add-ons)",
+    "competition": "Team-based, speed-based",
+    "materials": [],
+    "bestFor": "Practicing accurate answers to teacher-controlled questions while enforcing whole-class listening and accountability",
+    "tags": {
+      "patterns": ["A", "fixed_response", "short_answer"],
+      "outputTypes": ["single_word", "short_phrase"],
+      "cognitiveModes": ["listening_discrimination", "rapid_recall"]
+    },
+    "coreMechanic": [
+      "Teacher assigns numbers so that each number appears twice in the class",
+      "Teacher asks a question (the target language input) and then calls a number",
+      "The two students with that number race to clap",
+      "First student to clap answers the question for full points",
+      "Second student to clap answers for partial points",
+      "Points contribute to a team score"
+    ],
+    "notes": [
+      "Teacher input is the target language; the number calling is internal game mechanics",
+      "Once students learn the system, setup time is very fast in future classes",
+      "Can be embellished with movement, writing, or secondary tasks without changing the core mechanic",
+      "Teammates often enforce listening and fairness naturally"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Short, accurate answer to a teacher-asked question",
+      "cognitiveMode": "listening discrimination + rapid recall",
+      "speedVsAccuracy": "speed-biased after accuracy is established"
+    }
+  }
+,
+  {
+    "id": "whats-missing",
+    "name": "What's Missing?",
+    "levels": ["CK", "ET1", "ET2", "CL"],
+    "classSize": "4-16",
+    "classSizeMin": 4,
+    "classSizeMax": 16,
+    "format": "Whole class or team-based recall",
+    "category": "Vocab",
+    "energy": "low",
+    "productionDepth": "single word or short phrase",
+    "description": "What's Missing? is a low-energy whole-class recall game used to reinforce known vocabulary without visual support. Students study a visible set of flashcards, then identify which item has been removed. The focus is on accurate memory recall rather than recognition or extended sentence production.",
+    "howToRun": [
+      "Teacher displays a set of known vocabulary flashcards (at least 5 recommended).",
+      "Students look carefully at the full set.",
+      "Students close their eyes or turn around while the teacher removes one or more flashcards.",
+      "Teacher asks, 'What's missing?'",
+      "Students respond with the missing word or words.",
+      "Difficulty increases by removing multiple cards or reducing viewing time.",
+      "Teacher monitors for accuracy and controls response format (individual, choral, or team-based)."
+    ],
+
+    "languageReason": "Good for strengthening vocabulary recall without visual support.",
+    "energyReason": "Low-energy review activity that promotes calm focus and accuracy.",
+    "repDensity": "medium",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "Low",
+    "competition": "Optional (individual or team)",
+    "materials": ["Flashcards (minimum 5 recommended)"],
+    "bestFor": "Checking recall and reinforcing vocabulary without visual support, especially as a short review or lesson bookend",
+    "worksWellWhen": [
+      "Students have already seen the vocabulary",
+      "You want to test recall rather than recognition",
+      "You need a calm, focused activity",
+      "You want a quick review without setup time"
+    ],
+    "avoidWhen": [
+      "Teaching brand-new vocabulary",
+      "Students cannot yet name the items even with visual support",
+      "You need extended speaking or sentence production"
+    ],
+    "inputsNeeded": [
+      "A set of known vocabulary flashcards",
+      "At least 5–6 items for effective recall"
+    ],
+    "coreMechanic": [
+      "Teacher displays a set of flashcards",
+      "Students observe the full set",
+      "Teacher removes one (or more) flashcards without students seeing",
+      "Teacher asks 'What's missing?'",
+      "Students recall and say the missing word(s)",
+      "Difficulty can be increased by removing multiple cards"
+    ],
+    "notes": [
+      "Works well as a short activity (1–5 minutes)",
+      "Scales easily by number of cards removed",
+      "Forces recall without visual prompts",
+      "Can be run with hand-raising, choral response, or teams"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Correctly recalled vocabulary item(s)",
+      "cognitiveMode": "memory recall",
+      "speedVsAccuracy": "accuracy-first"
+    }
+  },
+  {
+    "id": "correct-the-teacher",
+    "name": "Correct the Teacher",
+    "levels": ["CK", "ET1", "ET2", "CL", "PowerUp"],
+    "classSize": "4-16",
+    "classSizeMin": 4,
+    "classSizeMax": 16,
+    "format": "Whole class or team-based correction",
+    "category": "Listening Comprehension",
+    "energy": "medium",
+    "productionDepth": "short correction (word, phrase, or sentence)",
+    "description": "Correct the Teacher is a medium-energy whole-class activity where students listen for deliberate mistakes in the teacher’s use of the target language and correct them. The teacher intentionally produces an incorrect word, phrase, or sentence, and students must detect the error and provide the correct form. The focus is on understanding meaning and form through active error detection.",
+    "howToRun": [
+      "Teacher says an incorrect version of the target language (word, phrase, or sentence).",
+      "Students listen carefully and identify the mistake.",
+      "Students correct the teacher using the proper form or meaning.",
+      "Teacher confirms the correct answer or prompts until the correct version is clearly produced.",
+      "Repeat with new deliberate errors, keeping each error focused on one issue at a time."
+    ],
+    "languageReason": "Excellent for checking understanding by having students detect and correct errors.",
+    "energyReason": "Medium energy activity that keeps students mentally engaged without physical movement.",
+    "repDensity": "medium",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "low",
+    "competition": "optional",
+    "materials": [],
+    "bestFor": "Checking understanding of meaning and form by having students detect and correct deliberate errors",
+    "tags": {
+      "patterns": ["A", "correction", "error_detection", "word", "phrase", "sentence"],
+      "outputTypes": ["word", "phrase", "sentence"],
+      "cognitiveModes": ["error_detection", "meaning_discrimination"]
+    },
+    "inputsNeeded": [
+      "Target language / structure (teacher inputs the correct form)",
+      "Teacher generates an incorrect version on the fly (internal to activity)"
+    ],
+    "coreMechanic": [
+      "Teacher produces an incorrect version of the target structure (word, phrase, or sentence)",
+      "Students listen and identify the error",
+      "Students correct the teacher using the appropriate form or meaning",
+      "Teacher confirms or prompts until the correct version is produced"
+    ],
+    "notes": [
+      "Errors should be deliberate and focused on one issue at a time",
+      "Works well with grammar, meaning contrasts, and pronoun or tense accuracy",
+      "Can be run chorally or by calling on individual students",
+      "Keeps cognitive load low while requiring real understanding"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Corrected word, phrase, or sentence",
+      "cognitiveMode": "error detection + meaning discrimination",
+      "speedVsAccuracy": "accuracy-first"
+    }
+  }
+,
+  {
+    "id": "clap-swap-reading",
+    "name": "Clap-Swap Reading (Reading Relay)",
+    "levels": ["ET1", "ET2", "CL", "PowerUp"],
+    "classSize": "4-16",
+    "classSizeMin":4,
+    "classSizeMax":16,
+    "format": "Whole-class reading with rapid turn-taking",
+    "category": "Q&A/Dialogue",
+    "energy": "medium",
+    "productionDepth": "sentence (reading aloud)",
+    "description": "Clap-Swap Reading (Reading Relay) is a medium-energy whole-class reading activity designed to improve fluency, tracking, and sentence accuracy. Students read aloud in rapid succession, switching readers instantly when the teacher gives a signal. The activity keeps all students actively tracking the text to ensure smooth transitions and sustained attention.",
+    "howToRun": [
+      "All students follow along in the text while one student reads aloud.",
+      "Teacher gives a predefined signal (such as a clap) to switch readers.",
+      "The next student immediately continues reading from the exact stopping point without restarting the sentence.",
+      "Switches happen frequently to ensure all students stay focused and track the text carefully.",
+      "Teacher controls pacing and monitors pronunciation, accuracy, and tracking throughout the activity."
+    ],
+    "languageReason": "Helpful for improving reading fluency, tracking, and sentence accuracy.",
+    "energyReason": "Medium energy pacing tool that keeps students attentive during reading practice.",
+    "repDensity": "medium",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-only",
+    "movement": "low",
+    "competition": "none (optional light team points)",
+    "materials": ["Text or dialogue (book / worksheet / board / TV)"],
+    "bestFor": "Keeping everyone engaged during dialogue/story reading while distributing turns and maintaining pacing",
+    "tags": {
+      "patterns": ["reading", "tracking", "fluency", "relay"],
+      "outputTypes": ["sentence"],
+      "cognitiveModes": ["text_tracking", "decoding", "sustained_attention"]
+    },
+    "inputsNeeded": [
+      "Text or dialogue (teacher inputs target text)",
+      "Teacher-defined cue for switching readers (clap, signal, or visual cue)"
+    ],
+    "coreMechanic": [
+      "All students track the text while one student reads aloud",
+      "Teacher cues the next reader using the predefined signal",
+      "Next reader continues from the exact spot without restarting",
+      "Teacher adjusts pace and switch frequency to maintain attention"
+    ],
+    "notes": [
+      "Start with choral read if decoding is shaky",
+      "Shorter turns for strong readers, longer for weaker readers",
+      "Works as a bridge into roleplay after reading once"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Reading sentences aloud accurately with correct tracking",
+      "cognitiveMode": "text tracking + decoding + sustained attention",
+      "speedVsAccuracy": "accuracy-first; pace increases with confidence"
+    }
+  }
+,
+  {
+    "id": "hidden-word-or-choice",
+    "name": "Hidden Word Choice",
+    "levels": ["CK", "CL", "ET"],
+    "classSize": "6-16",
+    "classSizeMin": "6",
+    "classSizeMax": "16",
+    "format": "Whole-class turn-based",
+    "category": "Q&A/Dialogue",
+    "energy": "medium",
+    "learningStage": "controlled-to-guided practice",
+    "productionDepth": "lexical-phrase",
+    "description": "Hidden Word Choice is a medium-energy whole-class guessing game designed to practice OR-questions and structured answer production. Students ask a question with two options, and the answering student must infer and produce one clear option using the full answer frame. The activity reinforces forced-choice language patterns and careful listening.",
+    "howToRun": [
+      "One student asks an OR-question using the target frame (e.g., 'Is it a tiger or a bear?').",
+      "The teacher secretly selects one of the two options and writes it on a mini whiteboard while keeping the word hidden from direct view.",
+      "Students carefully watch the teacher’s hand movement and writing motion to infer which word is being written (based on length, letter shapes, and stroke patterns).",
+      "The answering student responds using the full answer frame (e.g., 'It's a bear').",
+      "Rotate roles so multiple students practice asking and answering while the teacher controls visibility, pacing, and clarity of writing movement."
+    ],
+    "languageReason": "Strong for practicing OR-questions and producing one clear, structured answer.",
+    "energyReason": "Medium energy guessing format that maintains attention and engagement.",
+    "repDensity": "high",
+    "controlRisk": "low",
+    "monitoringModel": "teacher-mediated",
+    "movement": "optional",
+    "competition": "light",
+    "materials": ["whiteboard", "marker"],
+    "bestFor": "Practicing OR-questions that require selecting and producing one explicit option",
+    "tags": {
+      "patterns": ["OR_question", "forced_choice", "lexical_selection"],
+      "outputTypes": ["phrase"],
+      "cognitiveModes": ["inference", "forced_choice"]
+    },
+    "inputsNeeded": [
+      "OR-question target frame (teacher inputs question text)",
+      "Answer frames for both options (teacher inputs full expected responses)"
+    ],
+    "coreMechanic": [
+      "Student asks an OR-question using the target frame",
+      "Teacher writes one of the options silently",
+      "Answering student infers the word from partial visual information",
+      "Student produces the selected option using the full answer frame"
+    ],
+    "notes": [
+      "Requires conceptual understanding of OR; not for CP",
+      "Similar answer words increase phonological/orthographic awareness",
+      "Difficulty adjustable via writing speed, size, or clarity",
+      "Physical setup can vary without changing the mechanic"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Spoken selection of one option using the full answer frame",
+      "cognitiveMode": "inference and forced choice",
+      "speedVsAccuracy": "balanced"
+    }
+  },
+
+  {
+    "id": "hoop-race",
+    "name": "Hoop Race!",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "4-10 (played in pairs)",
+    "classSizeMin": 4,
+    "classSizeMax": 10,
+    "format": "Head-to-head physical race",
+    "category": "Vocab",
+    "energy": "high",
+    "learningStage": "controlled practice",
+    "productionDepth": "single-word",
+    "description": "Hoop Race! is a high-energy head-to-head physical drilling game designed for rapid repetition of a single target vocabulary word. Two students race while repeatedly saying the target word, combining movement with pronunciation practice under light competitive pressure.",
+    "howToRun": [
+      "Two students stand ready with four small hoops each.",
+      "On the teacher’s signal, both students race to place their hoops one at a time onto the teacher’s arm.",
+      "Each time a hoop is placed, the student must clearly say the target vocabulary word.",
+      "After placing all hoops, the student retrieves the final flashcard or object and says the word one more time.",
+      "Teacher monitors pronunciation and ensures clear, accurate repetition before awarding the win."
+    ],
+    "languageReason": "Strong for rapid repetition of a single target vocabulary item with clear pronunciation under mild pressure.",
+    "energyReason": "High-energy race format that combines repetition with physical movement, increasing engagement and urgency.",
+    "repDensity": "very high",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-observed during action",
+    "movement": "required",
+    "competition": "direct head-to-head",
+    "materials": ["4 small hoops per player", "1 main hoop", "target flashcard or object", "chair"],
+    "bestFor": "Fast, repetitive drilling of single vocabulary items with physical engagement",
+    "tags": {
+      "patterns": ["single_word_vocab", "lexical_repetition"],
+      "outputTypes": ["word"],
+      "cognitiveModes": ["recall", "reaction"]
+    },
+    "inputsNeeded": [
+      "Target vocabulary word (teacher-selected)",
+      "Optional final flashcard for retrieval confirmation"
+    ],
+    "coreMechanic": [
+      "Two students race simultaneously",
+      "Each student places hoops one at a time onto the teacher’s arm",
+      "Student must clearly say the target vocabulary word with each placement",
+      "After placing all hoops, student retrieves final flashcard and says the word again"
+    ],
+    "notes": [
+      "Designed primarily for single-word output rather than sentence production",
+      "Can scale difficulty by requiring a full sentence at the finale",
+      "High repetition density makes it effective for pronunciation drilling",
+      "Clear start signal required for fairness",
+      "Works best with concrete, easily pronounceable vocabulary"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Clear spoken repetition of the target vocabulary word (multiple times)",
+      "cognitiveMode": "rapid recall under light physical pressure",
+      "speedVsAccuracy": "speed-weighted but accuracy-checked"
+    }
+  },
+
+  {
+    "id": "hoop-race-2",
+    "name": "Hoop Race! 2",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "4-12 (played in 2–3 student sets)",
+    "classSizeMin": 4,
+    "classSizeMax": 12,
+    "format": "Head-to-head seated physical race",
+    "category": "Vocab",
+    "energy": "high",
+    "learningStage": "controlled practice",
+    "productionDepth": "single-word",
+    "description": "Hoop Race! 2 is a high-energy seated head-to-head race designed for rapid repetition and recall of a target vocabulary word. Students compete simultaneously while removing hoops and saying the word each time, combining physical engagement with fast pronunciation practice.",
+    "howToRun": [
+      "Students sit with three small hoops each placed on the main hoop or setup area.",
+      "On the teacher’s signal, competitors remove one hoop at a time.",
+      "Each time a hoop is removed, the student must clearly say the target vocabulary word.",
+      "After removing all hoops, the student retrieves the final flashcard or object and says the word again.",
+      "The first student to complete all repetitions accurately wins the round.",
+      "Teacher monitors pronunciation and ensures accuracy before confirming the winner."
+    ],
+    "languageReason": "Strong for rapid repetition and recall of target vocabulary under physical engagement.",
+    "energyReason": "High-energy race with simultaneous competitors; builds excitement and urgency.",
+    "repDensity": "very high",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-observed",
+    "movement": "required",
+    "competition": "direct head-to-head",
+    "materials": ["3 small hoops per student", "main hoop", "flashcard/object", "chairs"],
+    "bestFor": "Quick repetition and recall of vocabulary items; can scale with sentence-final output.",
+    "tags": {
+      "patterns": ["single_word_vocab", "lexical_repetition"],
+      "outputTypes": ["word"],
+      "cognitiveModes": ["recall", "reaction"]
+    },
+    "inputsNeeded": [
+      "Target vocabulary word",
+      "Optional final flashcard/object"
+    ],
+    "coreMechanic": [
+      "Students remove hoops one at a time while saying the target word",
+      "After removing all hoops, student retrieves final flashcard and says the word",
+      "First to finish wins the round"
+    ],
+    "notes": [
+      "Seated setup allows for quick rotation",
+      "Can require full sentence at finale for advanced learners",
+      "High repetition density reinforces pronunciation and recall"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Spoken repetition of vocabulary word",
+      "cognitiveMode": "rapid recall",
+      "speedVsAccuracy": "speed-weighted but monitored for accuracy"
+    }
+  },
+
+  {
+    "id": "quick-switch",
+    "name": "Quick Switch!",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "4-12",
+    "classSizeMin": 4,
+    "classSizeMax": 12,
+    "format": "Small-group reaction game",
+    "category": "Listening Comprehension",
+    "energy": "high",
+    "learningStage": "controlled practice",
+    "productionDepth": "single-word",
+    "description": "Quick Switch! is a high-energy small-group reaction game designed to reinforce listening comprehension and rapid recognition of target vocabulary. Students respond physically to Yes/No questions connected to a flashcard, reacting immediately based on their understanding.",
+    "howToRun": [
+      "Place a flashcard where all students can clearly see it.",
+      "Teacher asks a Yes/No question related to the flashcard.",
+      "If the correct answer is YES, students freeze in place.",
+      "If the correct answer is NO, students quickly move around the table and return to their spot.",
+      "Teacher monitors for correct reactions, safety, and clear understanding before continuing with the next question."
+    ],
+    "languageReason": "Practices listening comprehension and immediate recognition of target vocabulary.",
+    "energyReason": "Fast-paced movement around the table keeps attention and reinforces quick reaction.",
+    "repDensity": "high",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-observed",
+    "movement": "required",
+    "competition": "group reaction",
+    "materials": ["table", "flashcards"],
+    "bestFor": "Listening and quick recognition of single vocabulary items.",
+    "tags": {
+      "patterns": ["single_word_vocab", "yes_no_decision"],
+      "outputTypes": ["word"],
+      "cognitiveModes": ["reaction", "recognition"]
+    },
+    "inputsNeeded": ["Target flashcard", "Yes/No question"],
+    "coreMechanic": [
+      "Teacher holds up flashcard",
+      "Teacher asks a Yes/No question",
+      "Students freeze for YES or run around table for NO",
+      "Teacher monitors accuracy and safety"
+    ],
+    "notes": [
+      "Max 4 students per round",
+      "Can increase difficulty with two cards or unpredictable YES/NO",
+      "Small group ensures full participation and safety"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Correct action (freeze/run) based on comprehension",
+      "cognitiveMode": "quick recognition and reaction",
+      "speedVsAccuracy": "speed-heavy, accuracy-monitored"
+    }
+  },
+
+  {
+    "id": "flashcard-cup-grab",
+    "name": "Flashcard Cup Grab",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "4-16",
+    "classSizeMin": 4,
+    "classSizeMax": 16,
+    "format": "Head-to-head reaction duel",
+    "category": "Vocab",
+    "energy": "high",
+    "learningStage": "controlled practice",
+    "productionDepth": "single-word",
+    "description": "Flashcard Cup Grab is a high-energy head-to-head reaction game designed to strengthen rapid vocabulary recognition and listening accuracy. Students race to cover the correct flashcard with a cup as quickly as possible after hearing the teacher call out a word.",
+    "howToRun": [
+      "Students stand back-to-back facing the flashcards.",
+      "Teacher calls out a target vocabulary word.",
+      "Students race to cover the correct flashcard with their cup.",
+      "First student to cover the correct flashcard earns a point.",
+      "Repeat for multiple rounds, keeping score if desired."
+    ],
+    "languageReason": "Strengthens rapid vocabulary recognition and listening accuracy.",
+    "energyReason": "Competitive, fast-paced grabbing duel keeps engagement high.",
+    "repDensity": "high",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-observed",
+    "movement": "required",
+    "competition": "direct head-to-head",
+    "materials": ["Flashcards", "cups or markers"],
+    "bestFor": "Speed and accuracy in recognizing spoken vocabulary items.",
+    "tags": {
+      "patterns": ["single_word_vocab", "auditory_recognition"],
+      "outputTypes": ["word"],
+      "cognitiveModes": ["reaction", "recall"]
+    },
+    "inputsNeeded": ["Target vocabulary flashcards"],
+    "coreMechanic": [
+      "Students stand back-to-back facing flashcards",
+      "Teacher calls a word",
+      "Students race to cover correct flashcard with cup",
+      "First to cover correctly earns point"
+    ],
+    "notes": [
+      "Safety is important — soft cups recommended",
+      "Can use flyswatter or touch as variation",
+      "Non-playing students can act as judges or cheerleaders"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Correct flashcard covered with cup",
+      "cognitiveMode": "quick recall and reaction",
+      "speedVsAccuracy": "speed-weighted but accuracy-monitored"
+    }
+  },
+
+  {
+    "id": "blindfold-bonk",
+    "name": "Blindfold Bonk",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "3-4",
+    "classSizeMin": 4,
+    "classSizeMax": 16,
+    "format": "Blindfolded listening game",
+    "category": "Vocab",
+    "energy": "high",
+    "learningStage": "controlled practice",
+    "productionDepth": "single-word",
+    "description": "Blindfold Bonk is a high-energy blindfolded listening game that reinforces vocabulary pronunciation, listening discrimination, and spatial awareness. Students repeat their word while moving silently and the blindfolded teacher or designated student tries to 'bonk' them based on hearing the word.",
+    "howToRun": [
+      "Each student holds a target vocabulary word.",
+      "One student (or teacher) is blindfolded and attempts to bonk other students.",
+      "Students move silently around the space while repeating their word clearly.",
+      "The last student not bonked wins the round.",
+      "Ensure safe movement and avoid running; rounds can be repeated with different words or sentence structures."
+    ],
+    "languageReason": "Reinforces clear pronunciation and listening discrimination for vocabulary items.",
+    "energyReason": "Movement and guessing under high-energy conditions keeps students engaged.",
+    "repDensity": "medium",
+    "controlRisk": "medium-high",
+    "monitoringModel": "teacher-guided",
+    "movement": "required",
+    "competition": "direct stealth/reaction",
+    "materials": ["Flashcards", "soft 'bonker' object", "blindfold or sleep mask"],
+    "bestFor": "Listening-based navigation and vocabulary recall under fun, high-energy conditions.",
+    "tags": {
+      "patterns": ["single_word_vocab", "auditory_guided"],
+      "outputTypes": ["word"],
+      "cognitiveModes": ["listening", "spatial_awareness"]
+    },
+    "inputsNeeded": ["Target flashcards"],
+    "coreMechanic": [
+      "Students each hold a vocabulary word",
+      "Teacher blindfolded tries to 'bonk' students based on hearing their words",
+      "Students move silently while repeating their word",
+      "Last student remaining wins"
+    ],
+    "notes": [
+      "No running; safe movement only",
+      "Whole class can chant words for support",
+      "Can increase difficulty by using sentences instead of single words"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Clear spoken vocabulary word while moving silently",
+      "cognitiveMode": "listening and reaction",
+      "speedVsAccuracy": "speed with accuracy monitored"
+    }
+  },
+
+  {
+    "id": "dialogue-duel",
+    "name": "Dialogue Duel",
+    "levels": ["CP", "CK", "ET", "CL"],
+    "classSize": "4-12",
+    "classSizeMin": 4,
+    "classSizeMax": 12,
+    "format": "Head-to-head Q&A duel",
+    "category": "Q&A/Dialogue",
+    "energy": "high",
+    "learningStage": "controlled-to-guided practice",
+    "productionDepth": "short QA/dialogue",
+    "description": "Dialogue Duel is a competitive head-to-head Q&A game that practices structured dialogue, question formation, and quick response under mild competitive pressure. Students answer correctly before engaging in a brief reaction duel with a soft object to reinforce attention and engagement.",
+    "howToRun": [
+      "Student A asks the target question to Student B.",
+      "Student B answers using the correct target structure.",
+      "Immediately play Rock-Paper-Scissors to determine who grabs the bonker/shield.",
+      "Award points based on successful bonk or successful defense.",
+      "Switch roles for the next round and repeat."
+    ],
+    "languageReason": "Practices structured dialogue, question formation, and quick response under mild competitive pressure.",
+    "energyReason": "Physical dueling adds excitement while students complete language task first.",
+    "repDensity": "medium",
+    "controlRisk": "medium",
+    "monitoringModel": "teacher-observed",
+    "movement": "optional",
+    "competition": "direct head-to-head",
+    "materials": ["Soft 'bonker' object", "shield", "table"],
+    "bestFor": "Short structured dialogue practice with reaction-based reinforcement.",
+    "tags": {
+      "patterns": ["QA_structure", "dialogue_practice"],
+      "outputTypes": ["short_sentence"],
+      "cognitiveModes": ["recall", "reaction"]
+    },
+    "inputsNeeded": ["Dialogue/Q&A target structure", "Answer frame or model"],
+    "coreMechanic": [
+      "Student A asks question",
+      "Student B answers correctly",
+      "Immediately play Rock-Paper-Scissors to determine who grabs bonker/shield",
+      "Award points based on bonk success or defense",
+      "Switch roles for next round"
+    ],
+    "notes": [
+      "Emphasizes correct language first, reaction second",
+      "Can run best-of-3 rounds",
+      "Physical action optional but adds engagement"
+    ],
+    "outputProfile": {
+      "requiredOutput": "Correct short dialogue answer",
+      "cognitiveMode": "structured recall and reaction",
+      "speedVsAccuracy": "accuracy first, speed second"
+    }
+  },
+
+
+    {
+      "id": "vocabulary-balance-challenge",
+      "name": "Vocabulary Balance Challenge",
+      "levels": ["ET1", "CL", "CK"],
+      "classSize": "4-12",
+      "classSizeMin": 4,
+      "classSizeMax": 12,
+      "format": "Teams of 2, cooperative, whole-class active",
+      "category": "Vocab",
+      "energy": "medium",
+      "productionDepth": "single-word recall",
+      "languageReason": "Great for practicing vocabulary recognition and recall while promoting communication and teamwork.",
+      "energyReason": "Medium energy; requires coordination and movement without high-intensity bursts.",
+      "repDensity": "medium",
+      "controlRisk": "low",
+      "monitoringModel": "teacher-only",
+      "movement": "medium",
+      "competition": "light (team-based)",
+      "materials": ["soft objects for balancing", "flashcards"],
+      "bestFor": "Cooperative vocabulary drills with active engagement and teamwork.",
+      "tags": {
+        "patterns": ["target_word", "retrieval"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["listening_reaction", "retrieval", "coordination"]
+      },
+      "description": "Vocabulary Balance Challenge is a physically engaging team game that combines vocabulary recall with a steady-handed balancing act. Teams of two students must keep a soft object balanced between their shoulders while moving to retrieve target vocabulary cards called out by the teacher. This game emphasizes teamwork, communication, and careful coordination under light physical pressure.",
+      "howToRun": [
+        "Divide students into teams of 2.",
+        "Place a soft object between each pair's shoulders.",
+        "Scatter vocabulary flashcards in a central area.",
+        "Call out a target word; teams move to retrieve the correct card without dropping the object.",
+        "The first team to successfully retrieve and show the card scores a point.",
+        "Repeat for several rounds, rotating vocabulary."
+      ],
+      "coreMechanic": [
+        "Pairs maintain balance of object while moving",
+        "Retrieve correct flashcards based on teacher call",
+        "Drop triggers reset and return to start",
+        "Team communication and small synchronized steps emphasized"
+      ],
+      "notes": [
+        "Safety first: ensure soft objects and clear play area",
+        "Pace can be adjusted for younger or older students",
+        "Encourage cooperation over speed"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recall",
+        "cognitiveMode": "listening + motor coordination",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "word-relay",
+      "name": "Word Relay",
+      "levels": ["CP", "CK", "ET1", "CL"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Single-file line or circle, team relay",
+      "category": "Vocab",
+      "energy": "high",
+      "productionDepth": "single-word or short-phrase recall",
+      "languageReason": "Builds speaking fluency and vocabulary recall under time pressure.",
+      "energyReason": "High-energy relay; keeps students engaged and moving.",
+      "repDensity": "high",
+      "controlRisk": "medium",
+      "monitoringModel": "teacher-only",
+      "movement": "high",
+      "competition": "moderate (team race)",
+      "materials": ["flashcards"],
+      "bestFor": "Rapid vocabulary review and team coordination in a fast-paced setting.",
+      "tags": {
+        "patterns": ["target_word", "sequential_passing"],
+        "outputTypes": ["single_word", "short_phrase", "A"],
+        "cognitiveModes": ["retrieval", "fluency", "listening_reaction"]
+      },
+      "description": "Word Relay is a fast-paced team game where students pass a flashcard along a line or circle, saying the target word aloud before passing. The last student runs to the front to continue the relay. The game emphasizes fluency, accurate pronunciation, listening, and peer-supported pacing.",
+      "howToRun": [
+        "Arrange students in a line or circle.",
+        "Introduce the first flashcard and say the target word clearly.",
+        "The first student says the word and passes the card to the next student.",
+        "Continue passing and vocalizing until the last student reaches the front.",
+        "Repeat with new words or phrases, maintaining fast pace."
+      ],
+      "coreMechanic": [
+        "Students pass flashcards while saying the target word",
+        "Relay continues with sequential front-runner rotation",
+        "Teacher monitors pronunciation and pace",
+        "Parallel lines can be used for large classes"
+      ],
+      "notes": [
+        "Start with slow demonstration, increase speed gradually",
+        "Ensure clarity of pronunciation over speed",
+        "Use team splitting for larger classes"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word or phrase vocalization",
+        "cognitiveMode": "retrieval + fluency",
+        "speedVsAccuracy": "accuracy prioritized, then speed"
+      }
+    },
+
+    {
+      "id": "secret-handoff",
+      "name": "Secret Handoff",
+      "levels": ["CP", "CK", "ET1", "CL"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Whole-class active, chaser and deliverer",
+      "category": "Vocab",
+      "energy": "high",
+      "productionDepth": "single-word recognition",
+      "languageReason": "Practices vocabulary recognition and listening under suspenseful, interactive conditions.",
+      "energyReason": "High-energy; students move and react quickly in response to tactile cues.",
+      "repDensity": "high",
+      "controlRisk": "medium",
+      "monitoringModel": "teacher-only",
+      "movement": "high",
+      "competition": "moderate (duel-style)",
+      "materials": ["flashcards"],
+      "bestFor": "Quick-response listening practice with a fun chase mechanic.",
+      "tags": {
+        "patterns": ["target_word", "reactive_chase"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["listening_reaction", "retrieval", "motor_skills"]
+      },
+      "description": "Secret Handoff is an active vocabulary game where a 'Deliverer' stealthily hands a flashcard to a 'Chaser' while the class chants the target word. The Chaser must react quickly upon receiving the card, turning drill practice into an exciting chase game that emphasizes listening accuracy, reaction speed, and motor skills.",
+      "howToRun": [
+        "Choose one student as Chaser and one as Deliverer.",
+        "The class chants the target word while the Deliverer approaches the Chaser.",
+        "Deliverer places the card in Chaser's hands without being noticed.",
+        "Chaser immediately reacts to tag the Deliverer or let them reach a safe 'home' chair.",
+        "Rotate roles and repeat with new vocabulary."
+      ],
+      "coreMechanic": [
+        "Class chants target word",
+        "Deliverer stealthily hands card to Chaser",
+        "Chaser reacts instantly to card placement",
+        "Successful handoff triggers role swap"
+      ],
+      "notes": [
+        "Safety first: clear paths and gentle tagging",
+        "High energy but brief rounds",
+        "Can vary difficulty with eyes closed or multiple flashcards"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recognition",
+        "cognitiveMode": "listening + reaction + motor coordination",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "word-sprint-claim-and-conquer",
+      "name": "Word Sprint / Claim and Conquer",
+      "levels": ["CP", "CK", "ET1", "CL"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Duel-style, dual chair race, whole-class audience",
+      "category": "Vocab",
+      "energy": "high",
+      "productionDepth": "single-word recall",
+      "languageReason": "Reinforces vocabulary recognition, recall, and listening comprehension.",
+      "energyReason": "High-energy competitive game with running, sprinting, and fast decision-making.",
+      "repDensity": "high",
+      "controlRisk": "medium",
+      "monitoringModel": "teacher-only",
+      "movement": "high",
+      "competition": "high (head-to-head duels)",
+      "materials": ["flashcards", "2 chairs per duel"],
+      "bestFor": "Vocabulary practice with speed, accuracy, and safe competitive engagement.",
+      "tags": {
+        "patterns": ["target_word", "duel", "reaction"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["listening_reaction", "retrieval", "speed_decision"]
+      },
+      "description": "Word Sprint / Claim and Conquer is a duel-style vocabulary game where students race to claim flashcards called out by the teacher and finish by sprinting to their assigned chairs. It emphasizes listening comprehension, speed, and strategic positioning while keeping physical interactions safe.",
+      "howToRun": [
+        "Scatter 8-12 flashcards in an open area.",
+        "Assign two students as Duelists with designated chairs.",
+        "Teacher calls a word; Duelists race to step on it and say it aloud.",
+        "After several rounds, Duelists sprint to their assigned chairs.",
+        "The first to sit wins; rotate challengers and repeat."
+      ],
+      "coreMechanic": [
+        "Duelists claim cards by stepping on them and vocalizing target word",
+        "Continuous rounds without reset until final sprint",
+        "Audience observes and can chant words",
+        "Teacher judges accuracy and winner"
+      ],
+      "notes": [
+        "Two-chair system ensures safety",
+        "Adjust number of cards or add power cards for differentiation",
+        "Keep rounds fast to maintain engagement"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recall",
+        "cognitiveMode": "listening + retrieval + speed",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "hula-hoop-pass-vocabulary-relay",
+      "name": "Hula Hoop Pass / Vocabulary Relay",
+      "levels": ["CP", "CK", "ET1"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Single-file line, cooperative, hula hoop passed along line",
+      "category": "Vocab",
+      "energy": "medium",
+      "productionDepth": "single-word or sentence",
+      "languageReason": "Promotes clear articulation, vocabulary recall, and sequence awareness.",
+      "energyReason": "Medium energy; involves movement coordinated with verbal output.",
+      "repDensity": "medium",
+      "controlRisk": "low",
+      "monitoringModel": "teacher-only",
+      "movement": "medium",
+      "competition": "low (cooperative)",
+      "materials": ["hula hoop"],
+      "bestFor": "Cooperative vocabulary drills with emphasis on timing and verbal coordination.",
+      "tags": {
+        "patterns": ["target_word", "sequence"],
+        "outputTypes": ["single_word", "sentence", "A"],
+        "cognitiveModes": ["retrieval", "coordination", "fluency"]
+      },
+      "description": "Hula Hoop Pass / Vocabulary Relay is a cooperative game where students pass a hula hoop along a line while saying the target word or sentence as it passes over them. It combines teamwork, accurate articulation, and sequencing practice.",
+      "howToRun": [
+        "Form students in a single-file line.",
+        "Assign the target word or sentence for the round.",
+        "First student passes hoop over themselves while saying the word, then passes to the next.",
+        "Continue until hoop reaches the last student without breaking the chain.",
+        "Celebrate completion or repeat with new vocabulary."
+      ],
+      "coreMechanic": [
+        "Pass hula hoop down line while vocalizing target",
+        "Maintain physical chain",
+        "Teacher monitors pronunciation and timing",
+        "Adjust difficulty with sequence or no-hands rules"
+      ],
+      "notes": [
+        "Safe movement is priority",
+        "Use lightweight hoop",
+        "Can differentiate with single words or multi-step sequences"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word or sentence",
+        "cognitiveMode": "fluency + coordination",
+        "speedVsAccuracy": "accuracy first"
+      }
+    },
+    {
+      "id": "hot-potato-bomb-vocabulary-bomb",
+      "name": "Hot Potato Bomb / Vocabulary Bomb",
+      "levels": ["CP", "CK", "ET1", "CL"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Circle passing, elimination-based",
+      "category": "Vocab",
+      "energy": "high",
+      "productionDepth": "single-word recall",
+      "languageReason": "Practices speaking, vocabulary recall, and listening under pressure.",
+      "energyReason": "High-energy; students move and react quickly to the passing 'bomb'.",
+      "repDensity": "high",
+      "controlRisk": "medium",
+      "monitoringModel": "teacher-only",
+      "movement": "medium",
+      "competition": "moderate (elimination)",
+      "materials": ["soft ball", "timer", "flashcards"],
+      "bestFor": "Vocabulary recall drills with suspense and rapid reaction practice.",
+      "tags": {
+        "patterns": ["target_word", "elimination"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["retrieval", "fluency", "listening_reaction"]
+      },
+      "description": "Hot Potato Bomb / Vocabulary Bomb is an elimination game where students pass a soft ball while saying target vocabulary. The teacher sets a hidden timer, and the student holding the ball when it goes off is 'out'. The game continues until one student remains.",
+      "howToRun": [
+        "Students sit or stand in a circle.",
+        "Teacher chooses vocabulary set and hidden timer.",
+        "Start passing the ball quickly while saying the target word.",
+        "When timer goes off, student holding ball is out.",
+        "Continue rounds until a winner is determined."
+      ],
+      "coreMechanic": [
+        "Pass ball quickly while vocalizing target word",
+        "Timer triggers elimination",
+        "Teacher controls rounds and monitors pronunciation",
+        "Adjust pace for safety and engagement"
+      ],
+      "notes": [
+        "Safety: soft ball, no throwing",
+        "Keep eliminated students engaged",
+        "Adjust difficulty by changing words or reversing pass direction"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recall",
+        "cognitiveMode": "fluency + listening + reaction",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "center-jump-challenge",
+      "name": "Center Jump Challenge",
+      "levels": ["CP", "CK", "Beginner"],
+      "classSize": "6-16",
+      "classSizeMin": 6,
+      "classSizeMax": 16,
+      "format": "Pairs, head-to-head across central flashcards",
+      "category": "Vocab",
+      "energy": "high",
+      "productionDepth": "single-word recognition",
+      "languageReason": "Practices listening and quick word recognition.",
+      "energyReason": "High-energy reaction game with competitive jumping.",
+      "repDensity": "medium",
+      "controlRisk": "medium",
+      "monitoringModel": "teacher-only",
+      "movement": "high",
+      "competition": "high (duel)",
+      "materials": ["flashcards", "hula hoops"],
+      "bestFor": "Fast-paced vocabulary review in pairs with emphasis on listening accuracy.",
+      "tags": {
+        "patterns": ["target_word", "reactive_duel"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["listening_reaction", "retrieval", "motor_skills"]
+      },
+      "description": "Center Jump Challenge is a head-to-head vocabulary game where two students jump into hoops on either side of a target flashcard when the teacher calls it. The first to jump correctly scores points, emphasizing listening accuracy, reaction speed, and motor coordination.",
+      "howToRun": [
+        "Place flashcards in the center with hoops on either side.",
+        "Select two students to compete on a word.",
+        "Teacher calls a word; students jump into corresponding hoop.",
+        "Score points for correct, fast jumps. Rotate pairs for next round."
+      ],
+      "coreMechanic": [
+        "Head-to-head reaction to teacher call",
+        "Jump into correct hoop corresponding to word",
+        "Rotate pairs to ensure all participate",
+        "Teacher monitors speed and accuracy"
+      ],
+      "notes": [
+        "Safety: secure hoops, flat surface",
+        "Adjust timing and word difficulty for young learners",
+        "Optional: step instead of jump for very young classes"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recognition",
+        "cognitiveMode": "listening + reaction",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "chair-and-cup-challenge",
+      "name": "Chair and Cup Challenge",
+      "levels": ["CP", "CK", "ET"],
+      "classSize": "6-20",
+      "classSizeMin": 6,
+      "classSizeMax": 20,
+      "format": "Teams, multi-step table/room layout",
+      "category": "Vocab",
+      "energy": "medium",
+      "productionDepth": "single-word recall",
+      "languageReason": "Builds vocabulary recall, pronunciation, and sequencing skills.",
+      "energyReason": "Medium-energy, hands-on race keeps students engaged.",
+      "repDensity": "medium",
+      "controlRisk": "low",
+      "monitoringModel": "teacher-only",
+      "movement": "medium",
+      "competition": "moderate (team race)",
+      "materials": ["upturned chairs", "cups", "flashcards"],
+      "bestFor": "Word-level vocabulary drills combined with motor coordination and friendly competition.",
+      "tags": {
+        "patterns": ["target_word", "multi-step_sequence"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["retrieval", "coordination", "fluency"]
+      },
+      "description": "Chair & Cup Challenge is a hands-on vocabulary game where students place cups on upturned chairs while saying target words, then retrieve matching flashcards. It reinforces vocabulary, pronunciation, and sequencing in a cooperative or competitive setting.",
+      "howToRun": [
+        "Set up two upturned chairs with cups and flashcards.",
+        "Split class into teams.",
+        "Students race to place cups on chair legs while saying target word, then retrieve matching card.",
+        "Repeat rounds with different words or single-word drill mode."
+      ],
+      "coreMechanic": [
+        "Place cups while vocalizing target word",
+        "Retrieve matching flashcards",
+        "Rotate turns and monitor accuracy",
+        "Teacher models full sequence"
+      ],
+      "notes": [
+        "Safety: ensure chairs stable, non-slip surface",
+        "Adjust number of cups or words for younger learners",
+        "Encourage clear pronunciation before placing cups"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word recall",
+        "cognitiveMode": "retrieval + motor coordination",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    },
+    {
+      "id": "phonics-racer-vocabulary-duel",
+      "name": "Phonics Racer! / Vocabulary Duel",
+      "levels": ["CK", "ET", "CL", "Power UP", "TJ NCE"],
+      "classSize": "6-14",
+      "classSizeMin": 6,
+      "classSizeMax": 14,
+      "format": "Team duel, board track race",
+      "category": "Phonics",
+      "energy": "medium",
+      "productionDepth": "single-word or phonics sound",
+      "languageReason": "Builds phonics recall, pronunciation, and vocabulary under competitive conditions.",
+      "energyReason": "Medium-high energy; students perform repeated Rock, Paper, Scissors style duels with language output.",
+      "repDensity": "high",
+      "controlRisk": "low",
+      "monitoringModel": "teacher-only",
+      "movement": "medium",
+      "competition": "high (team duel)",
+      "materials": ["board or whiteboard", "team tokens", "markers", "list of target words"],
+      "bestFor": "Advanced phonics and vocabulary practice with team engagement and race mechanics.",
+      "tags": {
+        "patterns": ["target_word", "duel", "phonics"],
+        "outputTypes": ["single_word", "A"],
+        "cognitiveModes": ["retrieval", "fluency", "listening_reaction"]
+      },
+      "description": "Phonics Racer / Vocabulary Duel is a competitive team game where students perform Rock, Paper, Scissors style duels while saying target words or phonics sounds. The winning team moves their token forward on the race track, reinforcing pronunciation, vocabulary recall, and engagement.",
+      "howToRun": [
+        "Set up a race track on a board with 10-15 spaces.",
+        "Divide class into two teams, place tokens at Start.",
+        "Teacher points to a word/sound; duelists shout it instead of rock/paper/scissors.",
+        "Winner moves token forward, loser moves back. Continue rounds until a token reaches Finish."
+      ],
+      "coreMechanic": [
+        "Team duel based on language output",
+        "Token movement on track indicates success",
+        "Repeated practice with multiple words/sounds",
+        "Teacher monitors pronunciation and fairness"
+      ],
+      "notes": [
+        "Ensure all students pronounce words correctly before dueling",
+        "Add special spaces for excitement",
+        "Keep duels fast to maintain energy and engagement"
+      ],
+      "outputProfile": {
+        "requiredOutput": "single-word or phonics sound",
+        "cognitiveMode": "retrieval + fluency",
+        "speedVsAccuracy": "accuracy first, then speed"
+      }
+    }
+
+]

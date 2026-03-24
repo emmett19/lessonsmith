@@ -1,0 +1,40 @@
+{
+  "food": [
+    "food", "meal", "breakfast", "lunch", "dinner", "snack", "dessert",
+
+    "fruit", "fruits", "apple", "banana", "orange", "mango", "grape",
+    "grapes", "strawberry", "strawberries", "blueberry", "blueberries",
+    "pineapple", "watermelon", "melon", "peach", "pear", "plum",
+    "cherry", "kiwi", "lemon", "lime", "coconut", "papaya",
+
+    "vegetable", "vegetables", "carrot", "carrots", "broccoli",
+    "spinach", "lettuce", "tomato", "tomatoes", "potato", "potatoes",
+    "onion", "onions", "pepper", "peppers", "cucumber", "corn",
+    "mushroom", "mushrooms", "eggplant", "zucchini",
+
+    "meat", "chicken", "beef", "pork", "turkey", "ham", "bacon",
+    "sausage", "steak", "fish", "salmon", "tuna", "shrimp",
+
+    "bread", "rice", "pasta", "noodles", "sandwich", "sandwiches",
+    "burger", "burgers", "hamburger", "pizza", "taco", "tacos",
+    "burrito", "sushi", "soup", "salad", "cake", "cookie", "cookies",
+    "ice cream", "chocolate", "candy", "chips", "fries",
+
+    "milk", "cheese", "butter", "yogurt", "egg", "eggs",
+
+    "juice", "water", "coffee", "tea", "soda", "drink", "drinks"
+  ],
+
+  "school_subjects": [
+    "math", "mathematics", "algebra", "geometry", "calculus",
+    "science", "biology", "chemistry", "physics",
+    "history", "geography", "civics", "government",
+    "english", "language arts", "literature", "reading", "writing",
+    "spelling", "grammar",
+    "art", "music", "drama", "theater",
+    "physical education", "pe", "gym",
+    "computer science", "programming", "coding",
+    "economics", "psychology", "philosophy",
+    "foreign language", "spanish", "french", "german", "chinese"
+  ]
+}
