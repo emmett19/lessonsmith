@@ -1,5 +1,6 @@
 import type { RecommendationRequest, RecommendationPick } from "../types";
 import type { Game } from "../types";
+import { API_BASE_URL } from "../../../services/config";
 
 /**
  * Fetch recommended games based on teacher input
@@ -9,7 +10,7 @@ export async function fetchRecommendations(
 ): Promise<RecommendationPick[]> {
   console.log("Sending recommendation request:", request);
 
-  const res = await fetch("http://localhost:8080/api/recommend", {
+  const res = await fetch(`${API_BASE_URL}/api/recommend`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(request),
@@ -37,7 +38,7 @@ export async function fetchRecommendations(
 export async function fetchAllGames(): Promise<Game[]> {
   console.log("Fetching all games from backend");
 
-  const res = await fetch("http://localhost:8080/api/games/all", {
+  const res = await fetch(`${API_BASE_URL}/api/games/all`, {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
