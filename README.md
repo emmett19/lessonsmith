@@ -10,6 +10,7 @@ Instead of searching manually or relying on memory, teachers can enter a target 
 
 Frontend: https://lessonsmith.vercel.app  
 Backend API: https://lessonsmith.onrender.com
+Github: https://github.com/emmett19/lessonsmith
 
 ---
 
