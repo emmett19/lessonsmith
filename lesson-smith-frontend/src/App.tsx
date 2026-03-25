@@ -168,28 +168,40 @@ export default function App() {
   </div>
 );
 
-  return (
-    <div style={{ padding: 16 }}>
-      <h1>LessonSmith</h1>
+ return (
+  <div style={{ padding: 16 }}>
+    <h1 style={{ marginBottom: 8 }}>LessonSmith</h1>
 
-      <RecommendationForm onSubmit={handleSubmit} loading={loading} error={error} />
+    <p
+  style={{
+    marginTop: 0,
+    marginBottom: 20,
+    maxWidth: 520,
+    lineHeight: 1.5,
+    opacity: 0.85,
+  }}
+>
+  Find the best ESL game for your lesson. Enter your target language or browse all games below.
+</p>
 
-      <button
-        onClick={toggleAllGames}
-        style={{
-          margin: "16px 0",
-          padding: "8px 16px",
-          borderRadius: 6,
-          border: "none",
-          backgroundColor: "#28A745",
-          color: "white",
-          cursor: "pointer",
-          fontWeight: "bold",
-        }}
-        disabled={loadingAllGames}
-      >
-        {showAllGames ? "Hide All Games" : "Browse All Games"}
-      </button>
+    <RecommendationForm onSubmit={handleSubmit} loading={loading} error={error} />
+
+    <button
+      onClick={toggleAllGames}
+      style={{
+        margin: "16px 0",
+        padding: "8px 16px",
+        borderRadius: 6,
+        border: "none",
+        backgroundColor: "#28A745",
+        color: "white",
+        cursor: "pointer",
+        fontWeight: "bold",
+      }}
+      disabled={loadingAllGames}
+    >
+      {showAllGames ? "Hide All Games" : "Browse All Games"}
+    </button>
 
       {/* Browse Mode */}
       {showAllGames && (
