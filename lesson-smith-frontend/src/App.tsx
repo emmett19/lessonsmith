@@ -204,39 +204,77 @@ export default function App() {
     </button>
 
       {/* Browse Mode */}
-      {showAllGames && (
-        <div>
-          <BrowseFilterForm filter={filter} setFilter={setFilter} />
+{showAllGames && (
+  <div>
+    <h2 style={{ marginBottom: 8 }}>Game Library</h2>
+    <p style={{ marginTop: 0, marginBottom: 16, opacity: 0.8 }}>
+      Filter by level, category, energy, or class size.
+    </p>
 
-          {Object.entries(groupedFilteredGames).map(([category, games]) => (
-            <div key={category} style={{ marginBottom: 32 }}>
-              <h2 style={{ borderBottom: "2px solid #ccc", paddingBottom: 4 }}>{category}</h2>
-              <GamesList
-                results={games}
-                onSelectGame={g => setSelectedGame(g)}
-                renderCard={(g, onClick) => (
-                  <div
-                    onClick={onClick}
-                    style={{
-                      border: "1px solid #ccc",
-                      padding: 12,
-                      marginBottom: 12,
-                      borderRadius: 8,
-                      cursor: "pointer",
-                      boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
-                    }}
-                  >
-                    <h3 style={{ margin: 0 }}>{g.name}</h3>
-                    <div style={{ marginTop: 6, fontSize: 14, opacity: 0.7 }}>
-                      Energy: {g.energy}
-                    </div>
-                  </div>
-                )}
-              />
-            </div>
-          ))}
+    <div
+      style={{
+        border: "1px solid #ddd",
+        borderRadius: 8,
+        padding: 12,
+        marginBottom: 20,
+        backgroundColor: "#fafafa",
+      }}
+    >
+      <BrowseFilterForm filter={filter} setFilter={setFilter} />
+    </div>
+
+    {filteredGames.length === 0 ? (
+      <div style={{ marginTop: 12, opacity: 0.8 }}>
+        No games match these filters. Try adjusting your selections.
+      </div>
+    ) : (
+      Object.entries(groupedFilteredGames).map(([category, games]) => (
+        <div key={category} style={{ marginBottom: 32 }}>
+          <h2
+  style={{
+    borderBottom: "2px solid #ddd",
+    paddingBottom: 6,
+    fontSize: 36,
+    fontWeight: 700,
+    marginTop: 28,
+    marginBottom: 12,
+  }}
+>
+  {category}
+</h2>
+
+          <GamesList
+            results={games}
+            onSelectGame={(g) => setSelectedGame(g)}
+            renderCard={(g, onClick) => (
+              <div
+                onClick={onClick}
+                style={{
+                  border: "1px solid #ccc",
+                  padding: 12,
+                  marginBottom: 12,
+                  borderRadius: 8,
+                  cursor: "pointer",
+                  boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
+                }}
+              >
+                <h3 style={{ margin: 0 }}>{g.name}</h3>
+
+                <div style={{ marginTop: 6, fontSize: 14, opacity: 0.7 }}>
+                  Energy: {g.energy}
+                </div>
+
+                <div style={{ marginTop: 6, fontSize: 13, opacity: 0.6 }}>
+                  Tap for details
+                </div>
+              </div>
+            )}
+          />
         </div>
-      )}
+      ))
+    )}
+  </div>
+)}
 
       {/* Recommendation Mode */}
       {!showAllGames && results.length > 0 && (

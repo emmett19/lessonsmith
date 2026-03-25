@@ -32,31 +32,77 @@ export const BrowseFilterForm: React.FC<BrowseFilterFormProps> = ({ filter, setF
   };
 
   return (
-    <form style={{ display: "flex", gap: 12, marginBottom: 16 }}>
-      <select name="level" value={filter.level || ""} onChange={handleChange}>
-        <option value="">All Levels</option>
-        {levelOptions.map(l => <option key={l} value={l}>{l}</option>)}
-      </select>
+    <form
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 12,
+        marginBottom: 16,
+      }}
+    >
+      <div>
+        <label style={{ display: "block", marginBottom: 4 }}>Level</label>
+        <select
+          name="level"
+          value={filter.level || ""}
+          onChange={handleChange}
+          style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
+        >
+          <option value="">All Levels</option>
+          {levelOptions.map((l) => (
+            <option key={l} value={l}>
+              {l}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <select name="categories" value={filter.categories[0] || ""} onChange={handleChange}>
-        <option value="">All Categories</option>
-        {categoryOptions.map(c => <option key={c} value={c}>{c}</option>)}
-      </select>
+      <div>
+        <label style={{ display: "block", marginBottom: 4 }}>Category</label>
+        <select
+          name="categories"
+          value={filter.categories[0] || ""}
+          onChange={handleChange}
+          style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
+        >
+          <option value="">All Categories</option>
+          {categoryOptions.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <select name="energy" value={filter.energy || ""} onChange={handleChange}>
-        <option value="">All Energy</option>
-        {energyOptions.map(e => <option key={e} value={e}>{e}</option>)}
-      </select>
+      <div>
+        <label style={{ display: "block", marginBottom: 4 }}>Energy</label>
+        <select
+          name="energy"
+          value={filter.energy || ""}
+          onChange={handleChange}
+          style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
+        >
+          <option value="">All Energy</option>
+          {energyOptions.map((e) => (
+            <option key={e} value={e}>
+              {e}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <input
-        type="number"
-        name="classSize"
-        placeholder="Class Size"
-        value={filter.classSize ?? ""}
-        onChange={handleChange}
-        min={1}
-        style={{ width: 120 }}
-      />
+      <div>
+        <label style={{ display: "block", marginBottom: 4 }}>Class Size</label>
+        <input
+          type="number"
+          name="classSize"
+          placeholder="Any class size"
+          value={filter.classSize ?? ""}
+          onChange={handleChange}
+          min={1}
+          style={{ width: "100%", padding: 8, boxSizing: "border-box" }}
+        />
+      </div>
     </form>
   );
 };
