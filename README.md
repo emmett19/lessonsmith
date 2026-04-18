@@ -54,10 +54,12 @@ Each recommendation is based on:
 - Detailed game view with:
   - description
   - how to run instructions
-- Backend user registration system:
-  - persisted user accounts (PostgreSQL)
-  - password hashing (BCrypt)
-  - input validation and error handling
+Backend authentication system:
+- persisted user accounts (PostgreSQL)
+- password hashing with BCrypt
+- JWT-based authentication (login → token → protected routes)
+- stateless authorization using Spring Security filter chain
+- input validation and structured error handling
 - Mobile-friendly UI
 
 ---
@@ -67,7 +69,7 @@ Each recommendation is based on:
 LessonSmith uses a layered backend architecture:
 
 - **Controllers** handle HTTP requests and responses
-- **Services** contain business logic (e.g. recommendation scoring, user registration)
+- **Services** contain business logic (e.g. recommendation scoring, authentication, user management)
 - **Repositories** manage database access via JPA
 - **Entities** map application data to database tables
 
@@ -104,6 +106,18 @@ The frontend provides two modes:
 
 ---
 
+## Authentication Flow
+
+LessonSmith uses stateless authentication with JWT:
+
+1. Users register with email and password (hashed with BCrypt)
+2. On login, the backend validates credentials and returns a signed JWT
+3. The client includes the token in the Authorization header
+4. A custom Spring Security filter validates the token on each request
+5. Protected endpoints are accessible only with a valid token
+
+This approach enables secure, scalable authentication without server-side sessions.
+
 ## Tech Stack
 
 **Frontend**
@@ -117,7 +131,7 @@ The frontend provides two modes:
 - Spring Boot
 - REST API
 - Spring Data JPA
-- Spring Security (password hashing + endpoint protection)
+- Spring Security (BCrypt password hashing, JWT authentication, protected API routes)
 - Deployed on Render
 
 **Database**
@@ -127,8 +141,8 @@ The frontend provides two modes:
 
 ## Future Improvements
 
-- Login + authentication flow (JWT)
-- Protected routes and user-specific features
+- User-specific features and role-based authorization
+- Frontend authentication flow (token storage + protected UI routes)
 - AI-assisted pattern matching (LLM integration)
 - User-adjustable recommendation weighting
 - Full migration from JSON → database-backed game storage
