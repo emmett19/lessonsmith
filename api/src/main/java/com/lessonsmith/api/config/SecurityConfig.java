@@ -12,12 +12,6 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
-    private final JwtFilter jwtFilter;
-
-    public SecurityConfig(JwtFilter jwtFilter) {
-        this.jwtFilter = jwtFilter;
-    }
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -32,13 +26,7 @@ public class SecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/api/auth/register",
-                                "/api/auth/login",
-                                "/api/games/all",
-                                "/api/recommend"
-                        ).permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 );
 
         return http.build();
