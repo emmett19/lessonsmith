@@ -15,8 +15,9 @@ public class CorsConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOriginPatterns(
-                                "http://localhost:5174",
                                 "http://localhost:5173",
+                                "http://localhost:5174",
+                                "https://lessonsmith.vercel.app",
                                 "https://*.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
