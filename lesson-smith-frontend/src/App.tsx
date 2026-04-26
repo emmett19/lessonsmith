@@ -5,6 +5,9 @@ import GamesList from "./features/games/components/GamesList";
 import { BrowseFilterForm } from "./features/games/components/BrowseFilterForm";
 import type { Game, RecommendationRequest, RecommendationFormInput, FilterRequest } from "./features/games/types";
 import { fetchRecommendations, fetchAllGames } from "./features/games/api/gamesApi";
+import LoginForm from "./components/LoginForm";
+import { saveGame } from "./services/savedGamesService";
+import SavedGamesList from "./components/SavedGamesList";
 
 export default function App() {
   const [results, setResults] = useState<Game[]>([]);
@@ -34,6 +37,15 @@ export default function App() {
       })
       .finally(() => setLoadingAllGames(false));
   }, []);
+
+async function handleSaveGame(gameId: string) {
+  try {
+    await saveGame(gameId);
+    alert("Game saved!");
+  } catch {
+    alert("Login first to save games.");
+  }
+}
 
   const handleSubmit = async (formData: RecommendationFormInput) => {
     setLoading(true);
@@ -172,7 +184,7 @@ export default function App() {
   <div style={{ padding: 16 }}>
     <h1 style={{ marginBottom: 8 }}>LessonSmith</h1>
 
-    <p
+<p
   style={{
     marginTop: 0,
     marginBottom: 20,
@@ -184,7 +196,9 @@ export default function App() {
   Find the best ESL game for your lesson. Enter your target language or browse all games below.
 </p>
 
-    <RecommendationForm onSubmit={handleSubmit} loading={loading} error={error} />
+<LoginForm />
+
+<RecommendationForm onSubmit={handleSubmit} loading={loading} error={error} />
 
     <button
       onClick={toggleAllGames}
@@ -246,29 +260,39 @@ export default function App() {
           <GamesList
             results={games}
             onSelectGame={(g) => setSelectedGame(g)}
-            renderCard={(g, onClick) => (
-              <div
-                onClick={onClick}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: 12,
-                  marginBottom: 12,
-                  borderRadius: 8,
-                  cursor: "pointer",
-                  boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
-                }}
-              >
-                <h3 style={{ margin: 0 }}>{g.name}</h3>
+           renderCard={(g, onClick) => (
+  <div
+    onClick={onClick}
+    style={{
+      border: "1px solid #ccc",
+      padding: 12,
+      marginBottom: 12,
+      borderRadius: 8,
+      cursor: "pointer",
+      boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
+    }}
+  >
+    <h3 style={{ margin: 0 }}>{g.name}</h3>
 
-                <div style={{ marginTop: 6, fontSize: 14, opacity: 0.7 }}>
-                  Energy: {g.energy}
-                </div>
+    <div style={{ marginTop: 6, fontSize: 14, opacity: 0.7 }}>
+      Energy: {g.energy}
+    </div>
 
-                <div style={{ marginTop: 6, fontSize: 13, opacity: 0.6 }}>
-                  Tap for details
-                </div>
-              </div>
-            )}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        handleSaveGame(g.id);
+      }}
+      style={{ marginTop: 10 }}
+    >
+      Save Game
+    </button>
+
+    <div style={{ marginTop: 6, fontSize: 13, opacity: 0.6 }}>
+      Tap for details
+    </div>
+  </div>
+)}
           />
         </div>
       ))
@@ -281,28 +305,39 @@ export default function App() {
         <GamesList
           results={results}
           onSelectGame={g => setSelectedGame(g)}
-          renderCard={(g, onClick) => (
-            <div
-              onClick={onClick}
-              style={{
-                border: "1px solid #ccc",
-                padding: 12,
-                marginBottom: 12,
-                borderRadius: 8,
-                cursor: "pointer",
-                boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
-              }}
-            >
-              <h3 style={{ margin: 0 }}>{g.name}</h3>
-              <div style={{ marginTop: 8, opacity: 0.8 }}>
-                <div>{g.languageReason}</div>
-                <div>{g.energyReason}</div>
-              </div>
-            </div>
-          )}
-        />
-      )}
+         renderCard={(g, onClick) => (
+  <div
+    onClick={onClick}
+    style={{
+      border: "1px solid #ccc",
+      padding: 12,
+      marginBottom: 12,
+      borderRadius: 8,
+      cursor: "pointer",
+      boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
+    }}
+  >
+    <h3 style={{ margin: 0 }}>{g.name}</h3>
 
+    <div style={{ marginTop: 8, opacity: 0.8 }}>
+      <div>{g.languageReason}</div>
+      <div>{g.energyReason}</div>
+    </div>
+
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        handleSaveGame(g.id);
+      }}
+      style={{ marginTop: 10 }}
+    >
+      Save Game
+    </button>
+  </div>
+)}
+        /> 
+      )}
+      <SavedGamesList />
       {selectedGame && <GameDetailModal game={selectedGame} onClose={() => setSelectedGame(null)} />}
     </div>
   );

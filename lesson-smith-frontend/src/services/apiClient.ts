@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./config";
+import { getToken } from "./auth";
 
 type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
@@ -44,9 +45,10 @@ async function request<TResponse>(
   const res = await fetch(url, {
     method,
     headers: {
-      ...(options?.body ? { "Content-Type": "application/json" } : {}),
-      ...(options?.headers ?? {}),
-    },
+  ...(options?.body ? { "Content-Type": "application/json" } : {}),
+  ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {}),
+  ...(options?.headers ?? {}),
+},
     body: options?.body ? JSON.stringify(options.body) : undefined,
     signal: options?.signal,
   });
