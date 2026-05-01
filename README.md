@@ -1,8 +1,8 @@
 # LessonSmith
 
-LessonSmith is a tool for ESL teachers to quickly find effective classroom games based on the language they want to teach.
+LessonSmith is a full-stack ESL classroom game recommendation app that helps teachers quickly find activities that match the language they want to teach.
 
-Instead of searching manually or relying on memory, teachers can enter a target sentence or structure (e.g. "Can he swim?") and get game recommendations tailored to that language and desired energy level.
+Instead of searching through notes or relying on memory, teachers can enter a target sentence or structure — for example, `"Can he swim?"` — and receive classroom game recommendations tailored to that language, class context, and desired energy level.
 
 ---
 
@@ -10,57 +10,113 @@ Instead of searching manually or relying on memory, teachers can enter a target 
 
 Frontend: https://lessonsmith.vercel.app  
 Backend API: https://lessonsmith.onrender.com  
-Github: https://github.com/emmett19/lessonsmith  
+GitHub: https://github.com/emmett19/lessonsmith  
 
 ---
 
 ## Problem
 
-ESL teachers often need to quickly choose activities that match a specific grammar point or target language.
+ESL teachers often need to choose activities quickly while planning lessons or teaching live classes.
 
 In practice, this usually means:
-- relying on memory
-- flipping through notes
-- or choosing suboptimal games that don’t fully match the lesson
 
-This process is slow and inconsistent, especially under time pressure.
+- relying on memory
+- searching through old notes
+- adapting games on the fly
+- choosing activities that may not fully match the target language
+
+This process can be slow and inconsistent, especially under time pressure.
 
 ---
 
 ## Solution
 
-LessonSmith allows teachers to:
+LessonSmith helps teachers match target language to classroom-ready games.
 
-- Input target language (e.g. "Where is the ___?")
-- Select desired class energy (low / medium / high)
-- Instantly receive matching classroom games
+Teachers can:
 
-Each recommendation is based on:
-- pattern matching between input and known game-compatible structures
+- enter a target sentence or structure
+- select a desired energy level
+- receive recommended games with explanations
+- browse and filter the full game library
+- create an account and save useful games for later
+
+Recommendations are based on:
+
+- regex-based language pattern matching
+- weighted scoring rules
 - energy alignment
-- domain filtering (when applicable)
+- domain/category filtering
 
 ---
 
 ## Features
 
-- Target language → game recommendation engine
-- Energy-based filtering (low / medium / high)
-- Browseable game library with filters:
+### Recommendation Engine
+
+- Target language → classroom game recommendations
+- Regex-based matching for common ESL sentence structures
+- Weighted scoring system for ranking compatible games
+- Energy-level adjustment: low / medium / high
+- Recommendation reasoning shown to the user
+
+### Game Library
+
+- Browseable collection of ESL classroom games
+- Filters for:
   - level
   - category
   - energy
   - class size
-- Detailed game view with:
+- Detailed game cards with:
   - description
-  - how to run instructions
-Backend authentication system:
-- persisted user accounts (PostgreSQL)
-- password hashing with BCrypt
-- JWT-based authentication (login → token → protected routes)
-- stateless authorization using Spring Security filter chain
-- input validation and structured error handling
-- Mobile-friendly UI
+  - best use case
+  - energy explanation
+  - language explanation
+  - step-by-step instructions
+
+### Authentication & Saved Games
+
+- User registration and login
+- BCrypt password hashing
+- JWT-based stateless authentication
+- Protected API routes using Spring Security
+- Ability for logged-in users to save and remove games
+- Persistent saved games backed by PostgreSQL
+
+### UI
+
+- React + TypeScript frontend
+- Recommendation mode and browse mode
+- Mobile-friendly layout
+- Clear feedback for authentication and save actions
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- React
+- TypeScript
+- Vite
+- Deployed on Vercel
+
+### Backend
+
+- Java
+- Spring Boot
+- REST API
+- Spring Security
+- Spring Data JPA / Hibernate
+- JWT authentication
+- BCrypt password hashing
+- Deployed on Render
+
+### Database
+
+- PostgreSQL
+- Hosted via Supabase
 
 ---
 
@@ -69,9 +125,12 @@ Backend authentication system:
 LessonSmith uses a layered backend architecture:
 
 - **Controllers** handle HTTP requests and responses
-- **Services** contain business logic (e.g. recommendation scoring, authentication, user management)
-- **Repositories** manage database access via JPA
-- **Entities** map application data to database tables
+- **Services** contain business logic, including recommendation scoring and authentication
+- **Repositories** manage database access through Spring Data JPA
+- **Entities** map users, games, and saved-game relationships to database tables
+- **Security filters** validate JWTs and protect authenticated routes
+
+The frontend communicates with the backend through typed service functions and REST API calls.
 
 ---
 
@@ -79,98 +138,147 @@ LessonSmith uses a layered backend architecture:
 
 LessonSmith currently uses a hybrid data approach:
 
-- **PostgreSQL database**
-  - Stores user accounts (email, hashed password, role)
-  - Supports persistent backend features like authentication
+- **PostgreSQL**
+  - Stores user accounts
+  - Stores saved games
+  - Supports persistent authenticated user features
 
-- **JSON-based game library**
-  - Stores structured game data for recommendations
-  - Used by the recommendation engine
+- **Structured game data**
+  - Powers the game library and recommendation engine
+  - Designed for migration into a fully database-backed model
 
-Browse mode is backed by database-ready structures, with recommendation mode still using JSON for fast iteration.
+This hybrid approach allowed fast iteration on recommendation logic while adding production-style persistence for user-specific features.
 
 ---
 
-## How It Works
+## How Recommendations Work
 
-The recommendation system uses a structured scoring pipeline:
+The recommendation system uses a scoring pipeline:
 
-1. Regex-based pattern matching identifies compatible games
-2. Candidate games are weighted based on pattern strength
-3. Energy alignment adjusts final scores
-4. Domain-specific rules filter out irrelevant games
+1. The teacher enters target language, such as `"Where is the pencil?"`
+2. Regex patterns identify compatible language structures
+3. Matching games receive weighted scores based on pattern strength
+4. Energy preference adjusts the score
+5. Domain and category rules help filter irrelevant results
+6. The frontend displays ranked recommendations with reasoning
 
-The frontend provides two modes:
-- **Recommendation mode** (input → results)
-- **Browse mode** (filter and explore all games)
+LessonSmith currently supports two main modes:
+
+- **Recommendation Mode** — enter language and receive matched games
+- **Browse Mode** — explore and filter the full game library
 
 ---
 
 ## Authentication Flow
 
-LessonSmith uses stateless authentication with JWT:
+LessonSmith uses stateless JWT authentication:
 
-1. Users register with email and password (hashed with BCrypt)
-2. On login, the backend validates credentials and returns a signed JWT
-3. The client includes the token in the Authorization header
-4. A custom Spring Security filter validates the token on each request
-5. Protected endpoints are accessible only with a valid token
+1. A user registers with an email and password
+2. The backend hashes the password with BCrypt
+3. On login, the backend validates credentials and returns a signed JWT
+4. The frontend stores the token and sends it in the `Authorization` header
+5. A custom Spring Security filter validates the token on protected requests
+6. Authenticated users can save and remove games
 
-This approach enables secure, scalable authentication without server-side sessions.
-
-## Tech Stack
-
-**Frontend**
-- React
-- TypeScript
-- Vite
-- Deployed on Vercel
-
-**Backend**
-- Java
-- Spring Boot
-- REST API
-- Spring Data JPA
-- Spring Security (BCrypt password hashing, JWT authentication, protected API routes)
-- Deployed on Render
-
-**Database**
-- PostgreSQL (hosted via Supabase)
+This keeps authentication scalable without relying on server-side sessions.
 
 ---
 
-## Future Improvements
+## API Overview
 
-- User-specific features and role-based authorization
-- Frontend authentication flow (token storage + protected UI routes)
-- AI-assisted pattern matching (LLM integration)
-- User-adjustable recommendation weighting
-- Full migration from JSON → database-backed game storage
-- Expanded game library and domains
+### Public Routes
+
+- `GET /api/games/all`
+  - Returns the full game library
+
+- `POST /api/recommend`
+  - Returns ranked game recommendations based on target language and energy level
+
+- `POST /api/auth/register`
+  - Creates a new user account
+
+- `POST /api/auth/login`
+  - Authenticates a user and returns a JWT
+
+### Protected Routes
+
+- `GET /api/saved-games`
+  - Returns the logged-in user's saved games
+
+- `POST /api/saved-games/{gameId}`
+  - Saves a game for the logged-in user
+
+- `DELETE /api/saved-games/{gameId}`
+  - Removes a saved game for the logged-in user
 
 ---
 
 ## Why I Built This
 
-I built LessonSmith while teaching ESL classes, where choosing the right activity quickly is critical.
+I built LessonSmith from my experience teaching ESL, where choosing the right classroom activity quickly can make a big difference.
 
-This project reflects:
-- real classroom constraints
-- practical teaching workflows
-- a focus on tools that are usable in live environments
-- and a growing backend architecture supporting real users
+The app is based on real classroom constraints:
+
+- teachers often plan under time pressure
+- target language needs to match the activity mechanics
+- high-energy and low-energy games serve different classroom needs
+- reusable classroom routines are often more valuable than one-off activities
+
+LessonSmith turns that teaching workflow into a full-stack software product.
 
 ---
 
-## Getting Started (Local)
+## Future Improvements
+
+- Full migration of game data into PostgreSQL
+- More advanced saved-game organization
+- User-specific recommendation preferences
+- Role-based authorization
+- AI-assisted pattern matching with LLM integration
+- Expanded game library
+- Admin tools for adding and editing games
+- Improved frontend auth UX and protected UI states
+
+---
+
+## Getting Started Locally
+
+### Frontend
 
 ```bash
-# Frontend
-cd frontend
+cd lesson-smith-frontend
 npm install
 npm run dev
+
 
 # Backend
 cd api
 ./mvnw spring-boot:run
+
+## Environment Variables
+
+The frontend expects:
+
+VITE_API_BASE_URL=http://localhost:8080
+
+The backend expects database and JWT configuration values, including:
+
+DATABASE_URL=your_postgres_url
+JWT_SECRET=your_jwt_secret
+
+---
+
+## Project Status
+
+LessonSmith is actively being developed.
+
+Current completed milestones include:
+
+- Game recommendation engine
+- Browseable game library
+- Deployed frontend and backend
+- PostgreSQL integration
+- User registration and login
+- JWT authentication
+- Protected saved-games feature
 
