@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "../services/authService";
+import { login, register } from "../services/authService";
 
 type Props = {
   onLoginSuccess: () => void;
@@ -23,6 +23,19 @@ export default function LoginForm({ onLoginSuccess }: Props) {
     }
   }
 
+  async function handleRegister() {
+    setMessage("");
+
+    try {
+      await register(email, password);
+      await login(email, password);
+      setMessage("Account created!");
+      onLoginSuccess();
+    } catch (err) {
+      setMessage("Could not create account");
+    }
+  }
+
   return (
     <div
       style={{
@@ -30,13 +43,13 @@ export default function LoginForm({ onLoginSuccess }: Props) {
         flexDirection: "column",
         alignItems: "flex-end",
         gap: 8,
-        width: 200, // 👈 KEY FIX (locks it to the right visually)
+        width: 200,
       }}
     >
       <form
         onSubmit={handleLogin}
         style={{
-          width: "100%", // 👈 ensures inputs fill the container neatly
+          width: "100%",
         }}
       >
         <div style={{ marginBottom: 8 }}>
@@ -44,10 +57,11 @@ export default function LoginForm({ onLoginSuccess }: Props) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            required
             style={{
               width: "100%",
               padding: 6,
-              boxSizing: "border-box", // 👈 prevents overflow weirdness
+              boxSizing: "border-box",
             }}
           />
         </div>
@@ -58,6 +72,7 @@ export default function LoginForm({ onLoginSuccess }: Props) {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             type="password"
+            required
             style={{
               width: "100%",
               padding: 6,
@@ -75,10 +90,27 @@ export default function LoginForm({ onLoginSuccess }: Props) {
             backgroundColor: "#007BFF",
             color: "white",
             cursor: "pointer",
-            width: "100%", // 👈 makes it align cleanly with inputs
+            width: "100%",
           }}
         >
           Log in
+        </button>
+
+        <button
+          type="button"
+          onClick={handleRegister}
+          style={{
+            padding: "6px 12px",
+            borderRadius: 6,
+            border: "1px solid #ccc",
+            backgroundColor: "white",
+            color: "#333",
+            cursor: "pointer",
+            width: "100%",
+            marginTop: 8,
+          }}
+        >
+          Create account
         </button>
       </form>
 

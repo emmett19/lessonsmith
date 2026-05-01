@@ -12,6 +12,8 @@ import SavedGamesList from "./components/SavedGamesList";
 import { getSavedGames } from "./services/savedGamesService";
 import { getToken } from "./services/auth";
 import { deleteSavedGame } from "./services/savedGamesService";
+
+
 // import "./App.css";
 
 
@@ -27,6 +29,7 @@ export default function App() {
   const [savedGames, setSavedGames] = useState<SavedGame[]>([]);
   const [savedStatus, setSavedStatus] = useState<string | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(!!getToken());
+  
   
 
 
@@ -56,6 +59,12 @@ export default function App() {
   }, []);
 
 async function handleSaveGame(gameId: string) {
+
+ if (!isLoggedIn) {
+  alert("Log in to save games");
+  return;
+}
+
   try {
     await saveGame(gameId);
     await refreshSavedGames();
