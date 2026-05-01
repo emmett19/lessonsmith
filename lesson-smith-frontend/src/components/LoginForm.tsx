@@ -6,8 +6,8 @@ type Props = {
 };
 
 export default function LoginForm({ onLoginSuccess }: Props) {
-  const [email, setEmail] = useState("fresh123@example.com");
-  const [password, setPassword] = useState("password123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
   async function handleLogin(e: React.FormEvent) {
