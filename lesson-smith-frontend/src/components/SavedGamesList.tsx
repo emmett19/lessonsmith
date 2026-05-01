@@ -1,50 +1,18 @@
-import { useEffect, useState } from "react";
-import { getSavedGames, deleteSavedGame } from "../services/savedGamesService";
+import type { SavedGame } from "../features/games/types";
 
-type SavedGame = {
-  id: string;
-  name: string;
-  category?: string;
-  energy?: string;
-  bestFor?: string;
-  savedAt: string;
+type Props = {
+  savedGames: SavedGame[];
+  onDeleteGame: (id: string) => void;
 };
 
-export default function SavedGamesList() {
-  const [games, setGames] = useState<SavedGame[]>([]);
-  const [error, setError] = useState("");
-
-  async function loadGames() {
-    try {
-      const data = await getSavedGames();
-      setGames(data);
-    } catch {
-      setError("Login to view saved games");
-    }
-  }
-
-  async function handleDelete(id: string) {
-    try {
-      await deleteSavedGame(id);
-      setGames((prev) => prev.filter((g) => g.id !== id));
-    } catch {
-      alert("Failed to remove game");
-    }
-  }
-
-  useEffect(() => {
-    loadGames();
-  }, []);
-
+export default function SavedGamesList({ savedGames, onDeleteGame }: Props) {
   return (
     <div style={{ marginTop: 30 }}>
       <h2>Saved Games</h2>
 
-      {error && <p>{error}</p>}
+      {savedGames.length === 0 && <p>No saved games yet.</p>}
 
-      {games.length === 0 && !error && <p>No saved games yet.</p>}
-
-      {games.map((g) => (
+      {savedGames.map((g) => (
         <div
           key={g.id}
           style={{
@@ -63,7 +31,7 @@ export default function SavedGamesList() {
           )}
 
           <button
-            onClick={() => handleDelete(g.id)}
+            onClick={() => onDeleteGame(g.id)}
             style={{ marginTop: 6 }}
           >
             Remove

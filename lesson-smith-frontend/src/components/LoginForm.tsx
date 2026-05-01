@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { login } from "../services/authService";
 
-export default function LoginForm() {
+type Props = {
+  onLoginSuccess: () => void;
+};
+
+export default function LoginForm({ onLoginSuccess }: Props) {
   const [email, setEmail] = useState("fresh123@example.com");
   const [password, setPassword] = useState("password123");
   const [message, setMessage] = useState("");
@@ -13,6 +17,7 @@ export default function LoginForm() {
     try {
       await login(email, password);
       setMessage("Logged in!");
+      onLoginSuccess();
     } catch (err) {
       setMessage("Login failed");
     }
@@ -21,22 +26,29 @@ export default function LoginForm() {
   return (
     <div
       style={{
-        marginBottom: 20,
-        padding: 12,
-        border: "1px solid #ccc",
-        borderRadius: 8,
-        maxWidth: 400,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        gap: 8,
+        width: 200, // 👈 KEY FIX (locks it to the right visually)
       }}
     >
-      <h3 style={{ marginTop: 0 }}>Login</h3>
-
-      <form onSubmit={handleLogin}>
+      <form
+        onSubmit={handleLogin}
+        style={{
+          width: "100%", // 👈 ensures inputs fill the container neatly
+        }}
+      >
         <div style={{ marginBottom: 8 }}>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
-            style={{ width: "100%", padding: 6 }}
+            style={{
+              width: "100%",
+              padding: 6,
+              boxSizing: "border-box", // 👈 prevents overflow weirdness
+            }}
           />
         </div>
 
@@ -46,7 +58,11 @@ export default function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             type="password"
-            style={{ width: "100%", padding: 6 }}
+            style={{
+              width: "100%",
+              padding: 6,
+              boxSizing: "border-box",
+            }}
           />
         </div>
 
@@ -59,6 +75,7 @@ export default function LoginForm() {
             backgroundColor: "#007BFF",
             color: "white",
             cursor: "pointer",
+            width: "100%", // 👈 makes it align cleanly with inputs
           }}
         >
           Log in
@@ -66,7 +83,7 @@ export default function LoginForm() {
       </form>
 
       {message && (
-        <p style={{ marginTop: 8, fontSize: 14 }}>{message}</p>
+        <p style={{ marginTop: 4, fontSize: 13 }}>{message}</p>
       )}
     </div>
   );

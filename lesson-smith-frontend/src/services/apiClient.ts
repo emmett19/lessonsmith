@@ -46,7 +46,9 @@ async function request<TResponse>(
     method,
     headers: {
   ...(options?.body ? { "Content-Type": "application/json" } : {}),
-  ...(getToken() ? { Authorization: `Bearer ${getToken()}` } : {}),
+  ...(getToken() && !path.startsWith("/api/auth/")
+    ? { Authorization: `Bearer ${getToken()}` }
+    : {}),
   ...(options?.headers ?? {}),
 },
     body: options?.body ? JSON.stringify(options.body) : undefined,

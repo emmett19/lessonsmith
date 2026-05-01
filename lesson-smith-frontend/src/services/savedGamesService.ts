@@ -1,13 +1,6 @@
 import { api } from "./apiClient";
+import type { SavedGame } from "../features/games/types";
 
-type SavedGame = {
-  id: string;
-  name: string;
-  category?: string;
-  energy?: string;
-  bestFor?: string;
-  savedAt: string;
-};
 
 export function getSavedGames() {
   return api.get<SavedGame[]>("/api/saved-games");

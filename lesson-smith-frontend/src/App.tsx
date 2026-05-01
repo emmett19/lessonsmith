@@ -4,10 +4,17 @@ import RecommendationForm from "./features/games/components/RecommendationForm";
 import GamesList from "./features/games/components/GamesList";
 import { BrowseFilterForm } from "./features/games/components/BrowseFilterForm";
 import type { Game, RecommendationRequest, RecommendationFormInput, FilterRequest } from "./features/games/types";
+import type { SavedGame } from "./features/games/types";
 import { fetchRecommendations, fetchAllGames } from "./features/games/api/gamesApi";
 import LoginForm from "./components/LoginForm";
 import { saveGame } from "./services/savedGamesService";
 import SavedGamesList from "./components/SavedGamesList";
+import { getSavedGames } from "./services/savedGamesService";
+import { getToken } from "./services/auth";
+import { deleteSavedGame } from "./services/savedGamesService";
+// import "./App.css";
+
+
 
 export default function App() {
   const [results, setResults] = useState<Game[]>([]);
@@ -17,6 +24,16 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [loadingAllGames, setLoadingAllGames] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [savedGames, setSavedGames] = useState<SavedGame[]>([]);
+  const [savedStatus, setSavedStatus] = useState<string | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!getToken());
+  
+
+
+  useEffect(() => {
+  if (!getToken()) return;
+  refreshSavedGames();
+}, []);
 
   // New: Filter state for Browse mode
   const [filter, setFilter] = useState<FilterRequest>({
@@ -41,9 +58,37 @@ export default function App() {
 async function handleSaveGame(gameId: string) {
   try {
     await saveGame(gameId);
-    alert("Game saved!");
-  } catch {
-    alert("Login first to save games.");
+    await refreshSavedGames();
+    setSavedStatus(gameId);
+    await refreshSavedGames();
+  } catch (err) {
+    console.error("Failed to save game", err);
+    alert("Could not save game.");
+  }
+}
+
+async function handleDeleteSavedGame(id: string) {
+  try {
+    await deleteSavedGame(id);
+    await refreshSavedGames();
+  } catch (err) {
+    console.error("Failed to remove saved game", err);
+    alert("Failed to remove game");
+  }
+}
+
+async function handleLoginSuccess() {
+  setIsLoggedIn(true);
+  await refreshSavedGames();
+}
+
+
+async function refreshSavedGames() {
+  try {
+    const games = await getSavedGames();
+    setSavedGames(games);
+  } catch (err) {
+    console.error("Failed to fetch saved games", err);
   }
 }
 
@@ -75,6 +120,11 @@ async function handleSaveGame(gameId: string) {
     setShowAllGames(prev => !prev);
     setResults([]);
   };
+
+  function handleLogout() {
+  localStorage.clear();
+  window.location.reload();
+}
 
   // Helper: client-side filter for Browse mode
   const applyClientFilter = (game: Game, filter: FilterRequest) => {
@@ -123,6 +173,7 @@ async function handleSaveGame(gameId: string) {
     <div
       style={{
         backgroundColor: "white",
+         color: "black", 
         borderRadius: 12,
         padding: 24,
         maxWidth: 500,
@@ -181,23 +232,35 @@ async function handleSaveGame(gameId: string) {
 );
 
  return (
-  <div style={{ padding: 16 }}>
-    <h1 style={{ marginBottom: 8 }}>LessonSmith</h1>
+  <div style={{ padding: "0 16px 16px", width: "100%" }}>
+   <div style={{ marginBottom: 48 }}>
+  <div
+    style={{
+      display: "flex",
+      justifyContent: "flex-end",
+      marginBottom: 32,
+    }}
+  >
+    {isLoggedIn ? (
+      <button onClick={handleLogout}>Logout</button>
+    ) : (
+      <LoginForm onLoginSuccess={handleLoginSuccess} />
+    )}
+  </div>
 
-<p
-  style={{
-    marginTop: 0,
-    marginBottom: 20,
-    maxWidth: 520,
-    lineHeight: 1.5,
-    opacity: 0.85,
-  }}
->
-  Find the best ESL game for your lesson. Enter your target language or browse all games below.
-</p>
+  <h1 style={{ marginBottom: 8 }}>LessonSmith</h1>
 
-<LoginForm />
-
+  <p
+    style={{
+      marginTop: 0,
+      maxWidth: 520,
+      lineHeight: 1.5,
+      opacity: 0.85,
+    }}
+  >
+    Find the best ESL game for your lesson. Enter your target language or browse all games below.
+  </p>
+</div>
 <RecommendationForm onSubmit={handleSubmit} loading={loading} error={error} />
 
     <button
@@ -262,16 +325,17 @@ async function handleSaveGame(gameId: string) {
             onSelectGame={(g) => setSelectedGame(g)}
            renderCard={(g, onClick) => (
   <div
-    onClick={onClick}
-    style={{
-      border: "1px solid #ccc",
-      padding: 12,
-      marginBottom: 12,
-      borderRadius: 8,
-      cursor: "pointer",
-      boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
-    }}
-  >
+  onClick={onClick}
+  className="game-card"
+  style={{
+    border: "1px solid #ccc",
+    padding: 12,
+    marginBottom: 12,
+    borderRadius: 8,
+    cursor: "pointer",
+    boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
+  }}
+>
     <h3 style={{ margin: 0 }}>{g.name}</h3>
 
     <div style={{ marginTop: 6, fontSize: 14, opacity: 0.7 }}>
@@ -279,14 +343,13 @@ async function handleSaveGame(gameId: string) {
     </div>
 
     <button
-      onClick={(e) => {
-        e.stopPropagation();
-        handleSaveGame(g.id);
-      }}
-      style={{ marginTop: 10 }}
-    >
-      Save Game
-    </button>
+  onClick={(e) => {
+    e.stopPropagation();
+    handleSaveGame(g.id);
+  }}
+>
+  {savedStatus === g.id ? "Saved!" : "Save Game"}
+</button>
 
     <div style={{ marginTop: 6, fontSize: 13, opacity: 0.6 }}>
       Tap for details
@@ -306,17 +369,18 @@ async function handleSaveGame(gameId: string) {
           results={results}
           onSelectGame={g => setSelectedGame(g)}
          renderCard={(g, onClick) => (
-  <div
-    onClick={onClick}
-    style={{
-      border: "1px solid #ccc",
-      padding: 12,
-      marginBottom: 12,
-      borderRadius: 8,
-      cursor: "pointer",
-      boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
-    }}
-  >
+ <div
+  onClick={onClick}
+  className="game-card"
+  style={{
+    border: "1px solid #ccc",
+    padding: 12,
+    marginBottom: 12,
+    borderRadius: 8,
+    cursor: "pointer",
+    boxShadow: "1px 1px 4px rgba(0,0,0,0.1)",
+  }}
+>
     <h3 style={{ margin: 0 }}>{g.name}</h3>
 
     <div style={{ marginTop: 8, opacity: 0.8 }}>
@@ -324,20 +388,24 @@ async function handleSaveGame(gameId: string) {
       <div>{g.energyReason}</div>
     </div>
 
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        handleSaveGame(g.id);
-      }}
-      style={{ marginTop: 10 }}
-    >
-      Save Game
-    </button>
+   <button
+  onClick={(e) => {
+    e.stopPropagation();
+    handleSaveGame(g.id);
+  }}
+>
+  {savedStatus === g.id ? "Saved!" : "Save Game"}
+</button>
   </div>
 )}
         /> 
       )}
-      <SavedGamesList />
+      {isLoggedIn && (
+  <SavedGamesList
+    savedGames={savedGames}
+    onDeleteGame={handleDeleteSavedGame}
+  />
+)}
       {selectedGame && <GameDetailModal game={selectedGame} onClose={() => setSelectedGame(null)} />}
     </div>
   );

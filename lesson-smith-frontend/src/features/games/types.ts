@@ -33,6 +33,15 @@ export interface Game {
   classSizeMax: number;
 }
 
+ export type SavedGame = {
+  id: string;
+  name: string;
+  category?: string;
+  energy?: string;
+  bestFor?: string;
+  savedAt: string;
+};
+
 // types/FilterInput.ts
 export type FilterInput = {
   level?: string

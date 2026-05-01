@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.game-card {
+  transition: all 0.15s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: #aaa;
+}
